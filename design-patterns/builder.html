@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<button id="test">Test</button>
+<script>
+function getBeerById(id, callback) {
+  // Make request for beer by ID, then return the beer data.
+  asyncRequest('GET', 'beer.uri?id=' + id, function(resp) {
+    // callback response
+    callback(resp.responseText);
+  });
+}
+
+var el = document.querySelector("#test");
+el.addEventListener("click", getBeerByIdBridge, false);   
+
+function getBeerByIdBridge (e) {
+  getBeerById(this.id, function(beer) {
+    console.log('Requested Beer: '+beer);
+  });
+}
+</script>
+</body>
+</html>

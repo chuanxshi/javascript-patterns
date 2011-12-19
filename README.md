@@ -2,32 +2,33 @@
 
 Common JS Patterns based on the ideas of Stoyan Stefanov and many others.
 
+##Design Patterns
 
-##Creational
+###Creational
 Abstract factory
-Builder
-Factory method
+Builder (added)
+Factory method (added)
 Prototype
-Singleton
+Singleton (added)
 
-##Structural
-Adapter
+###Structural
+Adapter 
 Bridge
 Composite
-Decorator
-Facade
+Decorator (added)
+Facade (added)
 Flyweight
-Proxy
+Proxy (added)
 
-##Behavioral
-Chain of responsibility
-Command
+###Behavioral
+Chain of responsibility (added)
+Command (added)
 Interpreter
-Iterator
-Mediator
+Iterator (added)
+Mediator (added)
 Memento
-Observer
+Observer (added)
 State
-Strategy
+Strategy (added)
 Template method
 Visitor

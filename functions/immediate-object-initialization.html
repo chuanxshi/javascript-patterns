@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+({
+  // here you can define setting values
+  // a.k.a. configuration constants
+  maxwidth: 600,
+  maxheight: 400,
+  
+  // you can also define utility methods
+  gimmeMax: function () {
+    return this.maxwidth + "x" + this.maxheight;
+  },
+  
+  // initialize
+  init: function () {
+    console.log(this.gimmeMax());
+    // more init tasks...
+  }
+}).init();
+</script>
+</body>
+</html>

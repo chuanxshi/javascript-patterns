@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// BEFORE
+/* var utils = {
+  addListener: function (el, type, fn) {
+    if (typeof window.addEventListener === 'function') {
+      el.addEventListener(type, fn, false);
+    } else if (typeof document.attachEvent === 'function') { 
+      el.attachEvent('on' + type, fn);
+    } else { 
+      el['on' + type] = fn;
+    }
+  },
+  removeListener: function (el, type, fn) {
+  }
+}; */
+
+// the interface
+var utils = {
+  addListener: null,
+  removeListener: null
+};
+
+// the implementation
+if (typeof window.addEventListener === 'function') {
+  utils.addListener = function (el, type, fn) {
+    el.addEventListener(type, fn, false);
+  };
+} else if (typeof document.attachEvent === 'function') { // IE
+  utils.addListener = function (el, type, fn) {
+    el.attachEvent('on' + type, fn);
+  };
+  utils.removeListener = function (el, type, fn) {
+    el.detachEvent('on' + type, fn);
+  };
+} else { // older browsers
+  utils.addListner = function (el, type, fn) {
+    el['on' + type] = fn;
+  };
+  utils.removeListener = function (el, type, fn) {
+    el['on' + type] = null;
+  };
+}
+  
+</script>
+</body>
+</html>

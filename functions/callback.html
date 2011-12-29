@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+var findNodes = function (callback) {
+	var i = 100000,
+		nodes = [],
+		found;
+	
+	// check if callback is callable
+	if (typeof callback !== "function") {
+		callback = false;
+	}
+	
+  while (i) {
+    i -= 1;
+    
+    // complex logic here...
+    
+    // now callback:
+    if (callback) {
+      callback(found);
+    }
+    
+    nodes.push(found);
+  }
+  return nodes;
+};
+
+// a callback function
+var hide = function (node) {
+  node.style.display = "none";
+};
+
+// find the nodes and hide them as you go
+findNodes(hide);
+</script>
+</body>
+</html>

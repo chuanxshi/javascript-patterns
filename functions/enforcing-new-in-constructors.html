@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+function Person() {
+  var that = (this === window) ? {} : this;
+  that.name = name;
+  that.say = function() {
+    return "I am " + that.name;
+  };
+  return that;
+}
+</script>
+</body>
+</html>

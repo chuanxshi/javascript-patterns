@@ -32,3 +32,11 @@ Common JS Patterns based on the ideas of Stoyan Stefanov and many others.
 * Strategy (added)<br />
 * Template method<br />
 * Visitor
+
+##Function Patterns
+
+###API patterns
+* Callback patterns
+* Configuration objects
+* Returning functions
+* Currying

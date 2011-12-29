@@ -6,31 +6,31 @@ Common JS Patterns based on the ideas of Stoyan Stefanov and many others.
 
 ###Creational
 * Abstract factory
-* Builder (added)<br />
-* Factory method (added)<br />
-* Prototype<br />
-* Singleton (added)<br />
+* Builder (added)
+* Factory method (added)
+* Prototype
+* Singleton (added)
 
 ###Structural
-* Adapter <br />
-* Bridge<br />
-* Composite<br />
-* Decorator (added)<br />
-* Facade (added)<br />
-* Flyweight<br />
+* Adapter 
+* Bridge
+* Composite
+* Decorator (added)
+* Facade (added)
+* Flyweight
 * Proxy (added)
 
 ###Behavioral
-* Chain of responsibility (added)<br />
-* Command (added)<br />
-* Interpreter<br />
-* Iterator (added)<br />
-* Mediator (added)<br />
-* Memento<br />
-* Observer (added)<br />
-* State<br />
-* Strategy (added)<br />
-* Template method<br />
+* Chain of responsibility (added)
+* Command (added)
+* Interpreter
+* Iterator (added)
+* Mediator (added)
+* Memento
+* Observer (added)
+* State
+* Strategy (added)
+* Template method
 * Visitor
 
 ##Function Patterns

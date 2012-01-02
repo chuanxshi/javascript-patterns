@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// for illustration purposes
+// not valid JavaScript
+
+// we have this function
+function add(x, y) {
+  return x + y;
+}
+
+// and we know the arguments
+add(5, 4);
+
+// step 1 -- substitute one argument
+function add(5, y) {
+  return 5 + y;
+}
+
+// step 2 -- substitute the other argument
+function add(5, 4) {
+  return 5 + 4;
+}
+</script>
+</body>
+</html>

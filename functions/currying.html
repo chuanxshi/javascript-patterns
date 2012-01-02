@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// a curried add()
+// accepts partial list of arguments
+function add(x, y) {
+  var oldx = x, oldy = y;
+  if (typeof oldy === "undefined") { // partial
+    return function (newy) {
+      return oldx + newy;
+    }
+    // full application
+    return x + y;
+  }
+}
+
+// test
+typeof add(5); // "function"
+add(3)(4); // 7
+
+// create and store a new function
+var add2000 = add(2000);
+add2000(10); // 2010
+
+function schonfinkelize(fn) {
+  var slice = Array.prototype.slice,
+      stored_args = slice.call(arguments, 1);
+  return function () {
+    var new_args = slice.call(arguments),
+        args = stored_args.concat(new_args);
+    return fn.apply(null, args);
+  };
+}
+</script>
+</body>
+</html>

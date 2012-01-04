@@ -40,3 +40,12 @@ Common JS Patterns based on the ideas of Stoyan Stefanov and many others.
 * Configuration objects
 * Returning functions
 * Currying
+
+###Initialization patterns
+* Immediate functions
+* Immediate object initialization
+* Init-time branching
+
+###Performance patterns
+* Memoization
+* Self-defining functions

@@ -36,15 +36,15 @@ Common JS Patterns based on the ideas of Stoyan Stefanov and many others.
 ##Function Patterns
 
 ###API patterns
-* <a href="blob/master/functions/callback.html">Callback patterns</a>
+* <a href="javascript-patterns/blob/master/functions/callback.html" target="_blank">Callback patterns</a>
 * Configuration objects
-* Returning functions
-* Currying
+* <a href="javascript-patterns/blob/master/functions/returning-functions.html" target="_blank">Returning functions</a>
+* <a href="javascript-patterns/blob/master/functions/currying.html" target="_blank">Currying</a>
 
 ###Initialization patterns
-* Immediate functions
-* Immediate object initialization
-* Init-time branching
+* <a href="javascript-patterns/blob/master/functions/immediate-functions.html" target="_blank">Immediate functions</a>
+* <a href="javascript-patterns/blob/master/functions/immediate-object-initialization.html" target="_blank">Immediate object initialization</a>
+* <a href="javascript-patterns/blob/master/functions/init-time-branching.html" target="_blank">Init-time branching</a>
 
 ###Performance patterns
 * Memoization

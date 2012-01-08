@@ -36,7 +36,7 @@ Common JS Patterns based on the ideas of Stoyan Stefanov and many others.
 ##Function Patterns
 
 ###API patterns
-* Callback patterns
+* <a href="blob/master/functions/callback.html">Callback patterns</a>
 * Configuration objects
 * Returning functions
 * Currying

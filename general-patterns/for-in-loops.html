@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// the object
+var man = {
+  hands: 2,
+  legs: 2,
+  heads: 1
+};
+
+// somewhere else in the code
+// a method was added to all objects
+if (typeof Object.prototype.clone === 'undefined') {
+  Object.prototype.clone = function () {};
+}
+
+// 1.
+// for-in loop
+for (var i in man) {
+  if (man.hasOwnProperty(i)) { // filter
+    console.log(i, ":", man[i]);
+  }
+  /*
+  result in the console
+  hands : 2
+  legs : 2
+  heads : 1
+  */
+  
+// 2.
+// antipattern:
+// for-in loop without checking hasOwnProperty()
+for (var i in man) {
+  console.log(1, ":", man[i]);
+}
+/*
+result in the console
+hands : 2
+legs : 2
+hands : 1
+clone: function()
+*/
+
+for (var i in man) {
+  if (Object.prototype.hasOwnProperty.call(man, i)) { // filter
+    console.log(i, ":", man[i]);
+  }
+}
+
+var i,
+    hasOwn = Object.prototype.hasOwnProperty;
+for (i in man) {
+  if (hasOwn.call(man, i)) P // filter
+    console.log(i, ":", man[i]);
+  }
+}
+</script>
+</body>
+</html>

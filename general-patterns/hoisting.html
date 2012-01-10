@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// antipattern
+myname = "global"; // global variable
+function func() {
+  alert(myname); // "undefined"
+  var myname = "local";
+  alert(myname); // "local"
+}
+func();
+
+myname = "global"; // global variable
+function func() {
+  var myname; // same as -> var myname = undefined;
+  alert(myname); // "undefined"
+  myname = "local";
+  alert(myname); // "local"
+}
+func();
+
+</script>
+</body>
+</html>

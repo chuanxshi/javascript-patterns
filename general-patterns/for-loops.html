@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// sub-optimal loop
+for (var i = 0; i < myarray.length; i++) {
+  // do something with myarray[i]
+}
+
+for (var i = 0, max = myarray.length; i < max; i++) {
+  // do something with myarray[i]
+}
+
+function looper() {
+  var i = 0,
+      max,
+      myarray = [];
+      
+  // ...
+  var i, myarray = [];
+  
+  for (i = 0, max = myarray.length; i < max; i += 1) {
+    // do something with myarray[i]
+  }
+  
+  for (i = myarray.length; i--;) {
+    // do something with myarray[i]
+  }
+  
+  while (i--) {
+    // do something with myarray[i]
+  }
+ 
+}
+</script>
+</body>
+</html>

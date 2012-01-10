@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+function sum(x, y) {
+  // antipatten: implied global
+  result = x + y;
+  return result;
+}
+
+function sum(x, y) {
+  var result = x + y;
+  return result;
+}
+
+// antipattern, do not use
+function foo () {
+  var a = b = 0;
+  // ...
+}
+
+function foo() {
+  var a, b;
+  // ...
+  a = b = 0; // both local
+}
+
+var global = (function () {
+  return this;
+}());
+
+</script>
+</body>
+</html>

@@ -220,17 +220,34 @@ html {
 body {
   width:800px;
   margin:0 auto;
+  font-size:12px;
 }
 
 header {
   margin-top: 50px;
+  margin-bottom: 1em;
 }
 
 header img {padding-top:5px; border-top:1px solid #ccc; display:block;}
 
-
-
-
+h1, h2, h3 {font-family: 'Tinos', serif; padding:0; margin:0;}
+h1 {
+  font-size:16px;
+}
+h2 {
+  font-size:18px;
+  display:block;
+  padding-bottom:0.5em;
+  border-bottom:1px solid #ccc;
+  margin-bottom:1em;
+}
+h3 {
+  font-size:14px;
+  color:#555;
+}
+a {text-decoration:none;}
+ul, li {list-style:none; margin-left:0; padding-left:10px;}
+ul {margin-bottom:1em;}
 
 
 

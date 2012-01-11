@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// antipattern
+// create and append your element
+$(document.body).append("<div class='baaron' />");
+// requery to bind stuff
+$("div.baaron").click(function(){});
+
+// preferred
+// swap to appendTo to hold your element
+$("<div class='baaron' />")
+    .appendTo(document.body)
+    .click(function(){});
+</script>
+</body>
+</html>

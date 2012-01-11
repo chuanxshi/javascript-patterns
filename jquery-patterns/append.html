@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// antipattern
+// appending inside
+$.each(reallyLongArray, function(count, item) {
+  var newLI = '<li>' + item + '</li>';
+  $('#ballers').append(newLI);
+});
+
+// documentFragment off-DOM
+var frag = document.createDocumentFragment();
+$.each(reallyLongArray, function(count, item) {
+  var newLI = '<li>' + item + '</li>';
+  frag.appendChild(newLI[0]);
+});
+$('#ballers')[0].appendChild(frag);
+
+// string concatenate and set innerHTML
+var myhtml = '';
+$.each(reallyLongArray, function(count, item) {
+  myhtml += '<li>' + item + '</li>';
+});
+$('#ballers').html(myhtml);
+</script>
+</body>
+</html>

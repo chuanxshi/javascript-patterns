@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// antipattern
+if (type === 'foo' || type === 'bar' ) {}
+
+// preferred method 1 - regex test
+if ( /^(foo|bar)$/.test(type) ) {}
+
+// preferred method 2 - object literal lookup (smaller if < 5 items)
+if ( ({foo:1,bar:1})[type] ) {}
+
+// reference
+// http://paulirish.com/2009/perf/
+</script>
+</body>
+</html>

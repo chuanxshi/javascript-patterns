@@ -6,6 +6,63 @@
 </head>
 <body>
 <script>
+/***
+ function application
+ ***/
+// define a function
+var sayHi = function (who) {
+  return "Hello" + (who ? ", " + who : "") + "!";
+};
+
+// invoke a function 
+sayHi(); // "Hello"
+sayHi('world'); // "Hello, world!"
+
+// apply a function 
+sayHi.apply(null, ["hello"]); // "Hello, hello!"
+
+var alien = {
+  sayHi: function (who) {
+    return "Hello" + (who ? ", " + who : "") + "!";
+  }
+};
+
+alien.sayHi('world'); // "Hello, world!"
+sayHi.apply(alien, ["humans"]); // "Hello, humans!"
+
+// the second is more efficient, saves an array
+sayHi.apply(alien, ["humans"]); // "Hello, humans!"
+sayHi.call(alien, "humans"); // "Hello, humans!"
+
+/***
+ partial application
+ ***/
+
+// for illustration purposes
+// not valid JavaScript
+
+// we have this function
+function add(x, y) {
+  return x + y;
+}
+
+// and we know the arguments
+add(5, 4);
+
+// step 1 -- substitute one argument
+function add(5, y) {
+  return 5 + y;
+}
+
+// step 2 -- substitute the other argument
+function add(5, 4) {
+  return 5 + 4;
+}
+
+/***
+ currying
+ ***/
+
 // a curried add()
 // accepts partial list of arguments
 function add(x, y) {

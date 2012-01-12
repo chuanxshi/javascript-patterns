@@ -6,18 +6,45 @@
 </head>
 <body>
 <script>
-  function myFunc(param) {
-    if (!myFunc.cache) {
-      myFunc.cache = {};
-    }
+  var myFunc = function (param) {
     if (!myFunc.cache[param]) {
-      var result = {}; // ...
+      var result = {};
+      // ... expsensive operation ...
       myFunc.cache[param] = result;
     }
     return myFunc.cache[param];
-  }
-  myFunc('hello');
+  };
   
+  // cache storage
+  myFunc.cache = {};
+  
+  var myFunc = function () {
+    var cachekey = JSON.stringify(Array.prototype.slice.call(arguments)),
+                   result;
+    if (!myFunc.cache[cachekey]) {
+      result = {};
+      // ... expensive operation ...
+      myFunc.cache[cachekey] = result;
+    }
+    return myFunc.cache[cachekey];
+  };
+  
+  // cache storage
+  myFunc.cache = {};
+  
+  var myFunc = function (param) {
+    var f = arguments.callee,
+        result;
+    if (!f.cache[param]) {
+      result = {};
+      // ... expensive operation ...
+      f.cache[param] = result;
+    }
+    return f.cache[param];
+  };
+  
+  // cache storage
+  myFunc.cache = {};
 </script>
 </body>
 </html>

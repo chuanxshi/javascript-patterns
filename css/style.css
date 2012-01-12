@@ -245,10 +245,21 @@ h3 {
   font-size:14px;
   color:#555;
 }
-a {text-decoration:none;}
-ul, li {list-style:none; margin-left:0; padding-left:10px;}
-ul {margin-bottom:1em;}
+a {
+  text-decoration:none;
+}
 
+ul, li {
+  list-style:none; margin-left:0; padding-left:10px;
+}
+
+ul { 
+  margin-bottom:1em;
+}
+
+li {
+  margin-bottom:0.5em;
+}
 
 
 

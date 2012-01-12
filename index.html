@@ -43,6 +43,9 @@
     <img src="img/js-patterns.png" alt="JS Patterns" title="JS Patterns" />
   </header>
   <div role="main">
+    <section id="intro">
+      A JavaScript pattern and antipattern code collection that covers function patterns, jQuery patterns, design patterns, general patterns, literals and constructor patterns (<em>upcoming</em>), object creation patterns (<em>upcoming</em>), code reuse patterns (<em>upcoming</em>), DOM and browser patterns (<em>upcoming</em>).
+    </section>
     <section>
       <h2>Function Patterns</h2>
       <h3>API Patterns</h3>
@@ -70,19 +73,19 @@
     <section>
       <h2>jQuery Patterns</h2>
       <ul>
-        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/requery.html" target="_blank">requery</a> - avoid requery by using jQuery chaining</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/requery.html" target="_blank">Requery</a> - avoid requery by using jQuery chaining</li>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/append.html" target="_blank">append</a> - use string concatenate and set innerHTML</li>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/data.html" target="_blank">data</a> - pattern and antipattern of using data</li>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/context-and-find.html" target="_blank">context and find</a> - use find over context</li>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/detach.html" target="_blank">detach</a> - take element off the DOM while manipulating them</li>
-        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/event-delegation.html" target="_blank">event delegation</a> - event delegation pattern and antipattern</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/event-delegation.html" target="_blank">Event Delegation</a> - event delegation pattern and antipattern</li>
       </ul>
       <h3>Selector</h3>
       <ul>
-        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/left-and-right.html" target="_blank">left and right</a> - specific on the right, light on the left</li>
-        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/decending-from-id.html" target="_blank">decending from id</a> - be more specific</li>
-        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/universal-selector.html" target="_blank">universal selector</a> - use of universal selector</li>
-        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/specific-when-needed.html" target="_blank">be specific when needed</a> - be specific only when needed</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/left-and-right.html" target="_blank">Left and Right</a> - specific on the right, light on the left</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/decending-from-id.html" target="_blank">Decending from id</a> - be more specific</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/universal-selector.html" target="_blank">Universal Selector</a> - use of universal selector</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/specific-when-needed.html" target="_blank">Be Specific when Needed</a> - be specific only when needed</li>
       </ul>
     </section>
     
@@ -114,13 +117,66 @@
     <section>
       <h2>General Patterns</h2>
       <ul>
-        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/single-var-pattern.html" target="_blank">single var pattern</a> - use one var statement and declare multiple variables</li>
-        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/globals.html" target="_blank">globals</a> - problem with globals</li>
-        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/conditionals.html" target="_blank">conditionals</a> - pattern and antipattern of using if else</li>
-        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/hoisting.html" target="_blank">hoisting</a> - var statements anywhere in a function act as if the variables were declared at the top of the function</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/minimizing-globals.html" target="_blank">Minimizing Globals</a> - create and access a global variable in a browser environment</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/globals.html" target="_blank">The Problem with Globals</a> - various problems with globals</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/access-to-global-object.html" target="_blank">Access to the Global Object</a> - access the global object without hard-coding the identifier window</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/single-var-pattern.html" target="_blank">Single var Pattern</a> - use one var statement and declare multiple variables</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/hoisting.html" target="_blank">Hoisting</a> - var statements anywhere in a function act as if the variables were declared at the top of the function</li>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/for-loops.html" target="_blank">for loops</a> - optimized for loops</li> 
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/for-in-loops.html" target="_blank">for-in loops</a> - optimized for-in loops</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/built-in-prototypes.html" target="_blank">(Not) Augmenting Built-in Prototypes</a> - only augment built-in prototypes when certain conditions are met</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/switch-pattern.html" target="_blank">switch Pattern</a> - improve the readability and robustness of your switch statements</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/avoiding-implied-typecasting.html" target="_blank">Implied Typecasting</a> - avoid implied typecasting</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/avoiding-eval.html" target="_blank">Avoiding eval()</a> - avoid using eval()</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/parseint.html" target="_blank">Number Conversions with parseInt()</a> - use the second radix parameter</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/conditionals.html" target="_blank">Conditionals</a> - pattern and antipattern of using if else</li>
       </ul>
+    </section>
+    
+    <section>
+      <h2><em>References</em></h2>
+      <ol>    
+        <li>
+        The Essentials of Writing High Quality JavaScript<br />
+        <a href="http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/" target="_blank">http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/</a>
+        </li>
+        <li>
+        JSPatterns<br />
+        <a href="http://www.jspatterns.com/" target="_blank">http://www.jspatterns.com/</a>
+        </li>
+        <li>
+        jQuery Anti-Patterns for Performance & Compression<br />
+        <a href="http://paulirish.com/2009/perf/" target="_blank">http://paulirish.com/2009/perf/</a>
+        </li>
+        <li>
+        How DRY Affects JavaScript Performance<br />
+        <a href="http://velocityconf.com/velocityeu/public/schedule/detail/21634" target="_blank">http://velocityconf.com/velocityeu/public/schedule/detail/21634</a>
+        </li>
+        <li>
+        Object Oriented JavaScript<br />
+        <a href="http://www.packtpub.com/object-oriented-javascript/book" target="_blank">http://www.packtpub.com/object-oriented-javascript/book</a>
+        </li>
+        <li>
+        JavaScript Patterns<br />
+        <a href="http://shop.oreilly.com/product/9780596806767.do" target="_blank">http://shop.oreilly.com/product/9780596806767.do</a>
+        </li>
+        <li>
+        JavaScript: The Good Parts<br />
+        <a href="http://shop.oreilly.com/product/9780596517748.do" target="_blank">http://shop.oreilly.com/product/9780596517748.do</a>
+        </li>
+        <li>
+        Pro JavaScript Design Patterns<br />
+        <a href="http://jsdesignpatterns.com/" target="_blank">http://jsdesignpatterns.com/</a>
+        </li>
+        <li>
+        Essential JavaScript Design Patterns For Beginners, Volume 1.<br />
+        <a href="http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank">http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/</a>
+        </li>
+        <li>
+        Eloquent JavaScript<br />
+        <a href="http://eloquentjavascript.net/" target="_blank">http://eloquentjavascript.net/</a>
+        </li>
+      </ol>
     </section>
   </div>
   <footer>

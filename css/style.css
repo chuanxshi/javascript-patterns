@@ -51,8 +51,8 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
    Links
    ========================================================================== */
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
+a { color: #06e; }
+a:visited { color: #06e; }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
 
@@ -249,10 +249,11 @@ h3 {
 }
 a {
   text-decoration:none;
+  
 }
 
-ul, li {
-  list-style:none; margin-left:0; padding-left:10px;
+ul, ul li {
+  list-style:none; margin-left:0; padding-left:10px; color:#444;
 }
 
 ul { 

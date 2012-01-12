@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+/* 
+take element off the DOM while manipulating them
+*/
+var table = $('#some-table');
+var parent = table.parent();
+
+table.detach();
+table.addLotsAndLotsOfRows();
+parent.append(table);
+</script>
+</body>
+</html>

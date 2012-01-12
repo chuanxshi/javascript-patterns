@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// antipattern
+var arms = $('div.robotarm', '#container');
+// preferred
+var arms = $('#container').find('div.robotarm');
+
+// antipattern
+$('.reply_form', $(this).closest('.comment')).hide();
+// preferred
+$('this').closet('.comment').find('.reply_form').hide();
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+/*
+better to descend from an id
+*/
+
+// antipattern
+var arms = $('.container div.robotarm');
+
+// better
+var arms = $('#container div.robotarm');
+
+// preferred
+var arms = $('#container').find('div.robotarm');
+</script>
+</body>
+</html>

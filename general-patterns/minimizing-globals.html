@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+myglobal = "hello"; // antipattern
+console.log(myglobal); // "hello"
+console.log(window.myglobal); // "hello"
+console.log(window["myglobal"]); // "hello"
+console.log(this.myglobal); // "hello"
+
+// reference
+// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
+</script>
+</body>
+</html>

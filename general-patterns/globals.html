@@ -23,16 +23,16 @@ function foo () {
   // ...
 }
 
+var a = (b = 0);
+
 function foo() {
   var a, b;
   // ...
   a = b = 0; // both local
 }
 
-var global = (function () {
-  return this;
-}());
-
+// reference
+// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
 </script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+var zero = 0;
+
+// antipattern
+if (zero == false) {
+   // this block is executed...
+}
+
+// correct way
+if (zero === false) {
+   // not executing because zero is 0, not false
+}
+
+// reference
+// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// antipattern
+var property = "name";
+alert(eval("obj." + property));
+
+// preferred
+var property = "name";
+alert(obj[property]);
+
+
+// antipatterns
+setTimeout("myFunc()", 1000);
+setTimeout("myFunc(1, 2, 3)", 1000);
+
+// preferred
+setTimeout(myFunc, 1000);
+setTimeout(function () {
+   myFunc(1, 2, 3);
+}, 1000);
+
+// reference
+// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
+</script>
+</body>
+</html>

@@ -10,8 +10,7 @@
 $('a.trigger', $('#container')[0]).live('click', handlerFn)
 
 // preferred
-$('#container').delegate('click', 'a.trigger', handlerFn)
-
+$('#container').on('click', 'a.trigger', handlerFn)
 // reference
 // http://paulirish.com/2009/perf/
 </script>

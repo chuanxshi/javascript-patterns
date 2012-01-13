@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <title>JavaScript Patterns</title>
@@ -13,18 +13,18 @@ $(window).scroll(function() {
 
 // preferred
 var outerPane = $details.find(".details-pane-outer"),
-    didScroll = false;
+  didScroll = false;
 $(window).scroll(function() {
-    didScroll = true;
+  didScroll = true;
 });
 
 setInterval(function() {
-    if ( didScroll ) {
-        didScroll = false;
-        // Check your page position and then
-        // Load in more results
-        // outerPane.html();
-    }
+  if ( didScroll ) {
+    didScroll = false;
+    // Check your page position and then
+    // Load in more results
+    // outerPane.html();
+  }
 }, 250);
 
 // reference

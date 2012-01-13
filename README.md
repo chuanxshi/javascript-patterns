@@ -1,6 +1,8 @@
 #JavaScript Patterns
 
-Common JS Patterns based on the ideas of Stoyan Stefanov and many others.
+<img src="http://shichuan.github.com/javascript-patterns/img/js-patterns.png" alt="JS Patterns" title="JS Patterns" />
+<br />
+Common JS Patterns based on the ideas of Stoyan Stefanov, Paul Irish, John Resig, Mathias Bynens, Addy Osmani, Dustin Diaz and many others.
 
 ##Design Patterns
 

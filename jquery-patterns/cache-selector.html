@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// antipattern
+$('.list-item').click(function () {
+  $('.photo').hide();
+});
+
+// preferred
+var photo = $('.photo');
+$('.list-item').click(function () {
+  photo.hide();
+});
+
+// reference
+// http://ejohn.org/blog/learning-from-twitter/
+</script>
+</body>
+</html>

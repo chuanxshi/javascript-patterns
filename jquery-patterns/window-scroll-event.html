@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+// antipattern 
+$(window).scroll(function() {
+  $('.foo').something();
+});
+
+// preferred
+var outerPane = $details.find(".details-pane-outer"),
+    didScroll = false;
+$(window).scroll(function() {
+    didScroll = true;
+});
+
+setInterval(function() {
+    if ( didScroll ) {
+        didScroll = false;
+        // Check your page position and then
+        // Load in more results
+        // outerPane.html();
+    }
+}, 250);
+
+// reference
+// http://ejohn.org/blog/learning-from-twitter/
+</script>
+</body>
+</html>

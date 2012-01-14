@@ -6,6 +6,10 @@
 </head>
 <body>
 <script>
+/* Title: Self-defining functions
+   Description: self-overwrite with new bodies to do less work from the second invocation and after
+*/
+
 var scareMe = function () {
   alert("Boo!");
   scareMe = function () {

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+/* Title: Object literal
+   Description: use the simpler and reliable object literal instead of new Object();
+*/
+
+// antipattern
+var car = new Object();
+car.goes = "far";
+
+// preferred
+var car = {goes: "far"};
+
+</script>
+</body>
+</html>

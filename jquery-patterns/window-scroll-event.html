@@ -6,6 +6,10 @@
 </head>
 <body>
 <script>
+/* Title: window scroll event
+   Description: avoid attaching handlers to the window scroll event
+*/
+
 // antipattern 
 $(window).scroll(function() {
   $('.foo').something();

@@ -232,7 +232,7 @@ header img {padding-top:5px; border-top:1px solid #ccc; display:block;}
 
 h1, h2, h3 {font-family: 'Tinos', serif; padding:0; margin:0;}
 h1 {
-  font-size:16px; float:left;
+  font-size:16px; float:left; margin-top:7px;
 }
 #btns {float:right; margin-bottom:10px;}
 h2 {

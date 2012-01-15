@@ -10,28 +10,23 @@
    Description: when you pass function A to function B as a parameter, function A is a callback function
 */
 
+var complexComputation = function () { /* do some complex stuff and return a node */ };
+
 var findNodes = function (callback) {
-	var i = 100000,
-		nodes = [],
-		found;
-	
-	// check if callback is callable
-	if (typeof callback !== "function") {
-		callback = false;
-	}
-	
-  while (i) {
-    i -= 1;
-    
-    // complex logic here...
-    
-    // now callback:
-    if (callback) {
-      callback(found);
-    }
-    
-    nodes.push(found);
+  var nodes = [];
+
+  // check if callback is callable
+  if (typeof callback !== "function") {
+    callback = false;
   }
+  
+  var node = complexComputation();
+
+  if (callback) {
+    callback(node);
+  }
+    
+  nodes.push(node);
   return nodes;
 };
 
@@ -41,7 +36,12 @@ var hide = function (node) {
 };
 
 // find the nodes and hide them as you go
-findNodes(hide);
+var hiddenNodes = findNodes(hide);
+
+// you can also use an anonymous function, like this:
+var blockNodes = findNodes(function (node) {
+  node.style.display = 'block';	
+});
 
 // reference
 // http://www.jspatterns.com/

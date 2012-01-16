@@ -11,25 +11,25 @@
 */
 
 var findNodes = function (callback) {
-	var i = 100000,
-		nodes = [],
-		found;
-	
-	// check if callback is callable
-	if (typeof callback !== "function") {
-		callback = false;
-	}
-	
+  var i = 100000,
+    nodes = [],
+    found;
+
+  // check if callback is callable
+  if (typeof callback !== "function") {
+    callback = false;
+  }
+
   while (i) {
     i -= 1;
-    
+
     // complex logic here...
-    
+
     // now callback:
     if (callback) {
       callback(found);
     }
-    
+
     nodes.push(found);
   }
   return nodes;

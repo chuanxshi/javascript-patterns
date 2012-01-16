@@ -15,7 +15,7 @@
 var myFunc = function (param) {
   if (!myFunc.cache[param]) {
     var result = {};
-    // ... expsensive operation ...
+    // ... expensive operation ...
     myFunc.cache[param] = result;
   }
   return myFunc.cache[param];
@@ -31,7 +31,7 @@ myFunc.cache = {};
 var myFunc = function (param) {
   if (!myFunc.cache.hasOwnProperty(param)) {
     var result = {};
-    // ... expsensive operation ...
+    // ... expensive operation ...
     myFunc.cache[param] = result;
   }
   return myFunc.cache[param];

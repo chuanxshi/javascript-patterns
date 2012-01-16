@@ -6,6 +6,12 @@
 </head>
 <body>
 <script>
+// NOTE: Paul Irish states that the first statement is only an antipattern when optimizing for 
+// low-bandwidth source (such as for a bookmarklet.
+// Using the first statement will generally outperform the regex in a loop, and is faster than the
+// object literal for lower numbers of conditions (they generally even out around 10 conditions).
+// See http://jsperf.com/if-this-or-that
+
 // antipattern
 if (type === 'foo' || type === 'bar' ) {}
 

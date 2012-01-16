@@ -74,10 +74,10 @@ function add(x, y) {
   if (typeof oldy === "undefined") { // partial
     return function (newy) {
       return oldx + newy;
-    }
-    // full application
-    return x + y;
+    }    
   }
+  // full application
+  return x + y;
 }
 
 // test

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <title>JavaScript Patterns</title>
@@ -6,47 +6,50 @@
 </head>
 <body>
 <script>
-	var tree = {};
-  tree.decorate = function() {
-    console.log('Make sure the tree won\'t fall');
-  };
+/* Title: Decorator
+   Description: dynamically adds/overrides behaviour in an existing method of an object
+*/
+
+var tree = {};
+tree.decorate = function() {
+  console.log('Make sure the tree won\'t fall');
+};
   
-  tree.getDecorator = function(deco) {
-    tree[deco].prototype = this;
-    return new tree[deco];
-  };
+tree.getDecorator = function(deco) {
+  tree[deco].prototype = this;
+  return new tree[deco];
+};
   
-  tree.RedBalls = function() {
-    this.decorate = function() {
-      this.RedBalls.prototype.decorate();
-      console.log('Put on some red balls');
-    }
-  };
+tree.RedBalls = function() {
+  this.decorate = function() {
+    this.RedBalls.prototype.decorate();
+    console.log('Put on some red balls');
+  }
+};
   
-  tree.BlueBalls = function() {
-    this.decorate = function() {
-      this.BlueBalls.prototype.decorate();
-      console.log('Add blue balls');
-    }
-  };
+tree.BlueBalls = function() {
+  this.decorate = function() {
+    this.BlueBalls.prototype.decorate();
+    console.log('Add blue balls');
+  }
+};
   
-  tree.Angel = function() {
-    this.decorate = function() {
-      this.Angel.prototype.decorate();
-      console.log('An angel on the top');
-    }
-  };
+tree.Angel = function() {
+  this.decorate = function() {
+    this.Angel.prototype.decorate();
+    console.log('An angel on the top');
+  }
+};
   
-  tree = tree.getDecorator('BlueBalls');
-  tree = tree.getDecorator('Angel');
-  tree = tree.getDecorator('RedBalls');
+tree = tree.getDecorator('BlueBalls');
+tree = tree.getDecorator('Angel');
+tree = tree.getDecorator('RedBalls');
   
-  tree.decorate();
+tree.decorate();
   
 // reference
-// http://www.jspatterns.com/
+// http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/#decoratorpatternjavascript
 // http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate
-// http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/
 </script>
 </body>
 </html>

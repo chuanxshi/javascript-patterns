@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <title>JavaScript Patterns</title>
@@ -7,6 +7,10 @@
 <body>
 <button id="test">Test</button>
 <script>
+/* Title: Builder
+   Description: constructs complex objects by separating construction and representation
+*/
+
 function getBeerById(id, callback) {
   // Make request for beer by ID, then return the beer data.
   asyncRequest('GET', 'beer.uri?id=' + id, function(resp) {
@@ -25,9 +29,7 @@ function getBeerByIdBridge (e) {
 }
 
 // reference
-// http://www.jspatterns.com/
-// http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate
-// http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/
+// http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/#builderpatternjquery
 </script>
 </body>
 </html>

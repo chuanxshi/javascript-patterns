@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <title>JavaScript Patterns</title>
@@ -26,6 +26,10 @@
 </ol>
 
 <script>
+/* Title: Proxy
+ Description: provides a placeholder for another object to control access, reduce cost, and reduce complexity
+*/
+
 var $ = function (id) {
   return document.getElementById(id);
 };
@@ -202,9 +206,8 @@ $('toggle-all').onclick = function (e) {
 };
 
 // reference
-// http://www.jspatterns.com/
+// http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/#proxypatternjquery
 // http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate
-// http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/
 </script>
 </body>
 </html>

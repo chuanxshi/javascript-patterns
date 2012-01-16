@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <title>JavaScript Patterns</title>
@@ -6,6 +6,10 @@
 </head>
 <body>
 <script>
+/* Title: Mediator
+   Description: allows loose coupling between classes by being the only class that has detailed knowledge of their methods
+*/
+
 function Player(name) {
   this.points = 0;
   this.name = name;
@@ -81,9 +85,7 @@ setTimeout(function () {
 }, 30000);
 
 // reference
-// http://www.jspatterns.com/
 // http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate
-// http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/
 </script>
 </body>
 </html>

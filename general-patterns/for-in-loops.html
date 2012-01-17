@@ -55,7 +55,7 @@ for (var i in man) {
 var i,
     hasOwn = Object.prototype.hasOwnProperty;
 for (i in man) {
-  if (hasOwn.call(man, i)) P // filter
+  if (hasOwn.call(man, i)) { // filter
     console.log(i, ":", man[i]);
   }
 }

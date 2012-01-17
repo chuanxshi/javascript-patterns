@@ -20,7 +20,7 @@ $.each(reallyLongArray, function(count, item) {
 // documentFragment off-DOM
 var frag = document.createDocumentFragment();
 $.each(reallyLongArray, function(count, item) {
-  var newLI = '<li>' + item + '</li>';
+  var newLI = $('<li>' + item + '</li>');
   frag.appendChild(newLI[0]);
 });
 $('#ballers')[0].appendChild(frag);

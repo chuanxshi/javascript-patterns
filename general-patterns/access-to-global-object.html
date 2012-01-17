@@ -7,9 +7,9 @@
 <body>
 <script>
 // access to the Global Object
-// no longer the case in ECMAScript 5 in strict mode
+// this should work in ES3, ES5 and ES5-strict.
 var global = (function () {
-   return this;
+   return this || (1,eval)('this');
 }());
 
 // reference

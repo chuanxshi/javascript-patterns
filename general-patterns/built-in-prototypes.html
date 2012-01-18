@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <title>JavaScript Patterns</title>
@@ -6,6 +6,10 @@
 </head>
 <body>
 <script>
+/* Title: (Not) Augmenting Built-in Prototypes
+   Description: only augment built-in prototypes when certain conditions are met
+*/
+
 if (typeof Object.protoype.myMethod !== "function") {
    Object.protoype.myMethod = function () {
       // implementation...

@@ -25,6 +25,25 @@ console.log(window.tastes); // "yummy"
 var good_morning = new Waffle();
 console.log(typeof good_morning); // "object"
 console.log(good_morning.tastes); // "yummy"
+
+// preferred
+// You can also guarantee that this situation never occurs by guaranteeing new instances;
+// Similar to how you can call $() and $.Deferred() in the same way as new $() and new $.Deferred():
+function Waffle() {
+   if (!(this instanceof Waffle)) {
+      return new Waffle();
+   }
+   
+   this.tastes = "yummy";
+}
+
+var good_morning = new Waffle();
+var good_evening = Waffle();
+
+console.log(typeof good_morning); // "object"
+console.log(good_morning.tastes); // "yummy"
+console.log(typeof good_evening); // "object"
+console.log(good_evening.tastes); // "yummy"
 </script>
 </body>
 </html>

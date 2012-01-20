@@ -27,7 +27,7 @@ var constant = (function () {
       if (!ownProp.call(allowed, typeof value)) {
         return false;
       }
-      contants[prefix + name] = value;
+      constants[prefix + name] = value;
       return true;
     },
     isDefined: function (name) {
@@ -35,7 +35,7 @@ var constant = (function () {
     },
     get: function (name) {
       if (this.isDefined(name)) {
-        return constans[prefix + name];
+        return constants[prefix + name];
       }
       return null;
     }
@@ -43,19 +43,19 @@ var constant = (function () {
 }());
 
 // check if defined
-constant.isDefined("maxwidth"); // false
+console.log(constant.isDefined("maxwidth")); // false
 
 // define
-constant.set("maxwidth", 480); // true
+console.log(constant.set("maxwidth", 480)); // true
 
 // check again
-constant.isDefined("maxwidth"); // true
+console.log(constant.isDefined("maxwidth")); // true
 
 // attempt to redefine
-constant.set("maxwidth", 320); // false
+console.log(constant.set("maxwidth", 320)); // false
 
 // is the value still intact?
-constant.get("maxwidth"); // 480
+console.log(constant.get("maxwidth")); // 480
 </script>
 </body>
 </html>

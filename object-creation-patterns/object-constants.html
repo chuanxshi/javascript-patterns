@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+/* Title: Object Constants
+   Description: an implementation of a contant object provides set, inDefined and get methods
+*/
+
+var constant = (function () {
+  var constants = {},
+      ownProp = Object.prototype.hasOwnProperty,
+      allowed = {
+        string: 1,
+        number: 1,
+        boolean: 1
+      },
+      prefix = (Math.random() + "_").slice(2);
+  return {
+    set: function (name, value) {
+      if (this.isDefined(name)) {
+        return false;
+      }
+      if (!ownProp.call(allowed, typeof value)) {
+        return false;
+      }
+      contants[prefix + name] = value;
+      return true;
+    },
+    isDefined: function (name) {
+      return ownProp.call(constants, prefix + name);
+    },
+    get: function (name) {
+      if (this.isDefined(name)) {
+        return constans[prefix + name];
+      }
+      return null;
+    }
+  };
+}());
+
+// check if defined
+constant.isDefined("maxwidth"); // false
+
+// define
+constant.set("maxwidth", 480); // true
+
+// check again
+constant.isDefined("maxwidth"); // true
+
+// attempt to redefine
+constant.set("maxwidth", 320); // false
+
+// is the value still intact?
+constant.get("maxwidth"); // 480
+</script>
+</body>
+</html>

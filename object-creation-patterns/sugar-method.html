@@ -10,6 +10,13 @@
    Description: adding convenient funcationality to a language
 */
 
+if (typeof Function.prototype.method !== "function") {
+  Function.prototype.method = function (name, implementation) {
+    this.prototype[name] = implementation;
+    return this;
+  };
+}
+
 var Person = function (name) {
   this.name= name;
 }.
@@ -22,15 +29,8 @@ var Person = function (name) {
   });
 
 var a = new Person('Adam');
-a.getName(); // 'Adam'
-a.setName('Eve').getName(); // 'Eve'
-
-if (typeof Function.prototype.method !== "function") {
-  Function.prototype.method = function (name, implementation) {
-    this.prototype[name] = implementation;
-    return this;
-  };
-}
+console.log(a.getName()); // 'Adam'
+console.log(a.setName('Eve').getName()); // 'Eve'
 </script>
 </body>
 </html>

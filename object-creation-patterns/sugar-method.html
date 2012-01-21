@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+/* Title: method() Method
+   Description: adding convenient funcationality to a language
+*/
+
+var Person = function (name) {
+  this.name= name;
+}.
+  method('getName', function () {
+  return this.name;
+  }).
+  method('setName', function (name) {
+    this.name = name;
+    return this;
+  });
+
+var a = new Person('Adam');
+a.getName(); // 'Adam'
+a.setName('Eve').getName(); // 'Eve'
+
+if (typeof Function.prototype.method !== "function") {
+  Function.prototype.method = function (name, implementation) {
+    this.prototype[name] = implementation;
+    return this;
+  };
+}
+</script>
+</body>
+</html>

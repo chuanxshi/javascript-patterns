@@ -44,7 +44,7 @@ if (typeof window.addEventListener === 'function') {
     el.detachEvent('on' + type, fn);
   };
 } else { // older browsers
-  utils.addListner = function (el, type, fn) {
+  utils.addListener = function (el, type, fn) {
     el['on' + type] = fn;
   };
   utils.removeListener = function (el, type, fn) {

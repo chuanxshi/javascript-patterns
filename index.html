@@ -43,13 +43,25 @@
       </div>
     </div>
     <img src="img/js-patterns.png" alt="JS Patterns" title="JS Patterns" />
+    <nav id="toc" class="sticky">
+    <ul>
+      <li><a href="#function-patterns">Function Patterns</a></li>
+      <li><a href="#jquery-patterns">jQuery Patterns</a></li>
+      <li><a href="#design-patterns">Design Patterns</a></li>
+      <li><a href="#general-patterns">General Patterns</a></li>
+      <li><a href="#literals-and-constructor">Literals and Constructor Patterns</a></li>
+      <li>
+      <a href="#object-creation-patterns">Object Creation Patterns</a></li>
+      </li>
+    </ul>
+    </nav>
   </header>
   <div role="main">
     <section id="intro">
-      <p>A JavaScript pattern and antipattern code collection that covers function patterns, jQuery patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns (<em>upcoming</em>), code reuse patterns (<em>upcoming</em>), DOM and browser patterns (<em>upcoming</em>).</p>
+      <p>A JavaScript pattern and antipattern code collection that covers function patterns, jQuery patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns (<em>upcoming</em>), DOM and browser patterns (<em>upcoming</em>).</p>
       <p><a href="http://www.blog.highub.com/tag/jsPatternRoundUp/" target="_blank">Weekly roundups</a> (pattern updates) will be regularly <a href="http://twitter.com/shichuan" target="_blank">tweeted</a>.</p>
     </section>
-    <section>
+    <section id="function-patterns">
       <h2>Function Patterns</h2>
       <h3>API Patterns</h3>
       <ul>
@@ -73,7 +85,7 @@
       </ul>
     </section>
     
-    <section>
+    <section id="jquery-patterns">
       <h2>jQuery Patterns</h2>
       <ul>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/requery.html" target="_blank">requery</a> - avoid requery by using jQuery chaining</li>
@@ -94,7 +106,7 @@
       </ul>
     </section>
     
-    <section id="literals-and-constructors">
+    <section id="literals-and-constructor">
       <h2>Literals and Constructors Patterns</h2>
       <ul>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/literals-and-constructors/object-literal.html" target="_blank">Object literal</a> - use the simpler and reliable object literal instead of new Object();</li>
@@ -106,7 +118,7 @@
       </ul>
     </section>
     
-    <section>
+    <section id="design-patterns">
       <h2>Design Patterns</h2>
       <h3>Creational</h3>
       <ul>
@@ -131,7 +143,7 @@
       </ul>
     </section>
     
-    <section>
+    <section id="general-patterns">
       <h2>General Patterns</h2>
       <ul>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/minimizing-globals.html" target="_blank">Minimizing Globals</a> - create and access a global variable in a browser environment</li>
@@ -147,6 +159,24 @@
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/avoiding-eval.html" target="_blank">Avoiding eval()</a> - avoid using eval()</li>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/parseint.html" target="_blank">Number Conversions with parseInt()</a> - use the second radix parameter</li>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/conditionals.html" target="_blank">Conditionals</a> - pattern and antipattern of using if else</li>
+      </ul>
+    </section>
+    
+    <section id="object-creation-patterns">
+      <h2>Object Creation Patterns</h2>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/namespace.html" target="_blank">Namespace</a> - namespaces help reduce the number of globals required and avoid naming collisions or excessive name prefixing</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/declaring-dependencies.html" target="_blank">Declaring Dependencies</a> - it's good to declare the modules your code relies on at the top</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/private-properties-and-methods.html" target="_blank">Private Properties and Methods</a> - JavaScript doesn't have special syntax for private members, you can implement them using a closure</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/revelation.html" target="_blank">Revelation Pattern</a> - it is about having private methods, which you also expose as public methods</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/revealing-module.html" target="_blank">Revealing Module</a> - all the methods are kept private and you only expose those that you decide at the end</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/constructor-creation-module.html" target="_blank">Modules That Create Constructors</a> - the immediate function that wraps the module will return a function at the end</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/sandbox.html" target="_blank">Sandbox</a> - it provides an environment for the modules to work without affecting other modules and their personal sandboxes</li>        
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/public-static-members.html" target="_blank">Public Static Members</a> - accessible outside the constructor</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/private-static-members.html" target="_blank">Private Static Members</a> - shared by all the objects with the same constructor function and not accessible outside the constructor</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/object-constants.html" target="_blank">Object Constants</a> - an implementation of a contant object provides set, inDefined and get methods</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/chaining.html" target="_blank">Chaining Pattern</a> - it enables you to call methods on an object one after the other</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/sugar-method.html" target="_blank">method() Method</a> - adding convenient funcationality to a language</li>
       </ul>
     </section>
     

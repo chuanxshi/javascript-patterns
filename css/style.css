@@ -264,6 +264,34 @@ li {
   margin-bottom:0.5em;
 }
 
+
+
+.sticky {
+  position: fixed;
+  left: 0;
+  top: 91px;
+  z-index: 2;
+  margin: 0;
+  
+}
+
+nav {
+text-align: left;
+background: #324A69;
+background: -o-linear-gradient(rgba(50, 74, 105, 0.8), rgba(50, 74, 105, 1));
+background: -webkit-linear-gradient(rgba(50, 74, 105, 0.8), rgba(50, 74, 105, 1));
+background: -moz-linear-gradient(rgba(50, 74, 105, 0.8), rgba(50, 74, 105, 1));
+background: -ms-linear-gradient(rgba(50, 74, 105, 0.8), rgba(50, 74, 105, 1));
+width: 200px;
+
+}
+nav li a{ color:white;}
+
+nav li a:visited { color: white; }
+nav li a:hover { color: #ccc; }
+
+nav ul {margin-top:10px;}
+
 footer {
   text-align:center;
   margin-top:2em;

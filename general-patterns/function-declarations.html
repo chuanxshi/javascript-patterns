@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+/* Title: Function Declarations 
+   Description: creating anonymous functions and assigning them to a variable
+*/
+
+// antipattern
+function getData() {}
+
+
+// preferred
+var getData = function() { };
+
+
+/* Explanation:
+   advantages of using the second pattern:
+   1. Makes it easier to understand "functions as an object".
+   2. It enforces good semicolon habits.
+   3. Doesn't have much of the baggage traditionally associated with functions and scope.
+*/
+
+// reference
+// http://ejohn.org/blog/javascript-as-a-first-language/
+</script>
+</body>
+</html>

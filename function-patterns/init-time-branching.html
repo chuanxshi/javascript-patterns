@@ -15,7 +15,7 @@
   addListener: function (el, type, fn) {
     if (typeof window.addEventListener === 'function') {
       el.addEventListener(type, fn, false);
-    } else if (typeof document.attachEvent === 'function') { 
+    } else if (typeof document.attachEvent !== 'undefined') { 
       el.attachEvent('on' + type, fn);
     } else { 
       el['on' + type] = fn;
@@ -36,7 +36,7 @@ if (typeof window.addEventListener === 'function') {
   utils.addListener = function (el, type, fn) {
     el.addEventListener(type, fn, false);
   };
-} else if (typeof document.attachEvent === 'function') { // IE
+} else if (typeof document.attachEvent !== 'undefined') { // IE
   utils.addListener = function (el, type, fn) {
     el.attachEvent('on' + type, fn);
   };

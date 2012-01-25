@@ -101,6 +101,76 @@ function schonfinkelize(fn) {
 // reference
 // http://www.jspatterns.com/
 // http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate
+
+// Here's a generic curry function (from kybernetikos):
+// It's slightly more complex than the common examples of currying (e.g. the one above), but that's because
+//    the function can afterwards be called either in the normal way, or in the curried way.
+//    If you call a 3 argument curried function with it, the returned function *is also curried*.
+//    e.g. you can write func(arg1)(arg2)(arg3) or func(arg1, arg2, arg3) or func(arg1)(arg2, arg3) etc...
+
+/* the curry procedure needs to know how many arguments are required before it should calculate the result */
+function curry(func, minArgs) {
+   if (minArgs == undefined) {minArgs = 1;}
+	
+	function funcWithArgsFrozen(frozenargs) {
+		return function() {
+         // could do an optmisation here - if called with no arguments
+         // return exactly this function.
+			var args = Array.prototype.slice.call(arguments);
+			var newArgs = frozenargs.concat(args);
+			if (newArgs.length >= minArgs) {
+				return func.apply(this, newArgs);
+			} else {
+				return funcWithArgsFrozen(newArgs);
+			}
+		};
+	};
+
+	return funcWithArgsFrozen([]);
+}
+
+/* Here are some example uses - I use these with a functional immutable list structure implemented in js
+   but they also work ok for normal higher order functions over arrays.
+*/
+
+var plus = curry(function() {
+	var result = 0;
+	for (var i = 0; i < arguments.length; ++i) {
+		result += arguments[i];
+	}
+	return result;
+}, 2);
+
+/* Now you can call 
+      plus(3,2)         // normal call
+      plus(3)           // partial application (returns a function that adds 3 to its argument)
+      plus(3)(2)        // complete application (returns 5)
+      plus()(3)()()(2)  // returns 5
+      plus(3, 2, 4, 5)  // the normal call can optionally take more than the minimum number of arguments
+      plus(3)(2, 3, 5)  // the last application can too.
+*/
+
+var minus = curry(function(x) {
+	var result = x;
+	for (var i = 1; i < arguments.length; ++i) {
+		result -= arguments[i];
+	}
+	return result;
+}, 2);
+
+/* flip switches the order of the first two arguments on a function.  It is curried itself and
+   the function it returns is curried too.  Particularly useful if you want a function that subtracts a number */
+   
+var flip = curry(function(func) {
+	return curry(function(a, b) {
+		return func(b, a);
+	}, 2);
+});
+
+/* for example
+      minus(5)             // returns a function that takes its argument away from 5
+      flip(minus)(5)       // returns a function that takes 5 away from its argument
+*/
 </script>
 </body>
 </html>

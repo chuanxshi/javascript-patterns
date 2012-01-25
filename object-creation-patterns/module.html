@@ -6,9 +6,63 @@
 </head>
 <body>
 <script>
-/* Title: Modules That Create Constructors
-   Description: the immediate function that wraps the module will return a function at the end
+/* Title: Module Pattern
+   Description: all the methods are kept private and you only expose those that you decide at the end
 */
+
+var MYAPP = MYAPP || {};
+
+MYAPP.namespace = function (ns_string) {
+  var parts = ns_string.split('.'),
+      parent = MYAPP,
+      i;
+  
+  // strip redundant leading global
+  if (parts[0] === "MYAPP") {
+    parts = parts.slice(1);
+  }
+  
+  for (i = 0; i < parts.length; i += 1) {
+    // create a property if it doesn't exist
+    if (typeof parent[parts[i]] === "undefined") {
+      parent[parts[i]] = {};
+    }
+    parent = parent[parts[i]];
+  }
+  return parent;
+};
+
+MYAPP.namespace('MYAPP.utilities.Array');
+
+MYAPP.utilities.array = (function () {
+  // private properties
+  var array_string = "[object Array]",
+      ops = Object.prototype.toString,
+      
+      // private methods
+      inArray = function (haystack, needle) {
+        for (var i = 0, max = haystack.length; i < max; i += 1) {
+          if (haystack[i] === needle) {
+            return i;
+          }
+        }
+        return -1;
+      },
+      isArray = function (a) {
+        return ops.call(a) === array_string;
+      };
+      // end var
+       
+  // revealing public API
+  return {
+    isArray: isArray,
+    indexOf: inArray
+  };
+}());
+
+
+// Modules That Create Constructors
+
 var MYAPP = MYAPP || {};
 
 MYAPP.namespace = function (ns_string) {

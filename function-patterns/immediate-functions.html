@@ -10,9 +10,15 @@
    Description: syntax that enables function execution as soon as it is defined
 */
 
+(function () {
+  console.log('watch out!');
+}());
+
+//alternative with less parentheses
 !function () {
   console.log('watch out!');
 }();
+
 
 // reference
 // http://www.jspatterns.com/

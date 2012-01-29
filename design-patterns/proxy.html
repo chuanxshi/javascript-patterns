@@ -74,7 +74,7 @@ var proxy = {
     }
   },
   flush: function () {
-    http.makeRequest(this.ids, "proxy.handler");            
+    http.makeRequest(this.ids, 'proxy.handler');            
     // clear timeout and queue
     this.timeout = null;
     this.ids = [];

@@ -38,20 +38,20 @@ jsp.dom.factory = function(type) {
 }
   
 var o = jsp.dom.factory('Link');
-o.url = 'http://google.com'
+o.url = 'http://google.com';
 o.insert(document.body);
   
 var taskManager = {};
   
 taskManager.update = function() {
-  console.log("update");
+  console.log('update');
 }
   
 taskManager.read = function() {
-  console.log("read");
+  console.log('read');
 }
   
-var type = "update";
+var type = 'update';
 var task;
   
 if (type === 'update') {

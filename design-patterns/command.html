@@ -30,9 +30,9 @@
     return CarManager[commad.request](commad.model,commad.carID);
   };
   
-  var actionA = CarManager.execute({request: "requestInfo", model: 'Ford Mondeo', carID: '543434'});
+  var actionA = CarManager.execute({request: 'requestInfo', model: 'Ford Mondeo', carID: '543434'});
   console.log(actionA);
-  var actionB = CarManager.execute({request: "buyVehicle", model: 'Ford Mondeo', carID: '543434'});
+  var actionB = CarManager.execute({request: 'buyVehicle', model: 'Ford Mondeo', carID: '543434'});
   console.log(actionB);
   
 })();

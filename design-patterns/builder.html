@@ -19,8 +19,8 @@ function getBeerById(id, callback) {
   });
 }
 
-var el = document.querySelector("#test");
-el.addEventListener("click", getBeerByIdBridge, false);   
+var el = document.querySelector('#test');
+el.addEventListener('click', getBeerByIdBridge, false);   
 
 function getBeerByIdBridge (e) {
   getBeerById(this.id, function(beer) {

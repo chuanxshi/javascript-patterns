@@ -235,6 +235,9 @@ h1 {
   font-size:16px; float:left; margin-top:7px;
 }
 #btns {float:right; margin-bottom:10px;}
+
+#btns span {display:block; float:left;}
+.st_sharethis {margin-top:2px;}
 h2 {
   font-size:18px;
   display:block;

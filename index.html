@@ -39,8 +39,7 @@
     <div class="clearfix">
       <h1>JavaScript Pattern Collection</h1> 
       <div id="btns">
-      <span class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://shichuan.github.com/javascript-patterns/" data-via="shichuan" data-hashtags="javascript">Tweet</a></span>
-      <span  class='st_sharethis' displayText='ShareThis'></span>
+      <span  class='st_sharethis_hcount' displayText='ShareThis'></span><span  class='st_twitter_hcount' displayText='Tweet'></span><span  class='st_facebook_hcount' displayText='Facebook'></span><span  class='st_plusone_hcount' ></span>
       </div>
     </div>
     <img src="img/js-patterns.png" alt="JS Patterns" title="JS Patterns" />
@@ -239,8 +238,13 @@
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.4.min.js"><\/script>')</script>
 
 
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-  <script type="text/javascript">var switchTo5x=false;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'44fc3536-fd12-4c07-970d-6654da9a2d6c'});</script>
+  <script type="text/javascript">var switchTo5x=false;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">
+    stLight.options({
+      publisher:'44fc3536-fd12-4c07-970d-6654da9a2d6c',
+      st_url:'http://shichuan.github.com/javascript-patterns/'
+    });
+  </script>
   
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->

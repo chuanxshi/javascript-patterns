@@ -7,8 +7,8 @@
 <body>
 <script>
 /* Title: Hoisting
-   Description: var statements anywhere in a function act as if the variables were declared at the top of the function
-*/
+ * Description: var statements anywhere in a function act as if the variables were declared at the top of the function
+ */
 
 // antipattern
 myname = "global"; // global variable
@@ -19,7 +19,7 @@ function func() {
 }
 func();
 
-// The preceding code snippet will behave as if it were implemented like so:
+// the preceding code snippet will behave as if it were implemented like so:
 myname = "global"; // global variable
 function func() {
   var myname; // same as -> var myname = undefined;
@@ -29,7 +29,8 @@ function func() {
 }
 func();
 
-// reference
+
+// References
 // http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
 </script>
 </body>

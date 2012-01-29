@@ -7,7 +7,7 @@
 <body>
 <script>
 /* Title: Minimizing Globals
-   Description: create and access a global variable in a browser environment
+   Description: they are declared outside of any function or simply used without being declared
 */
 
 myglobal = "hello"; // antipattern
@@ -16,7 +16,7 @@ console.log(window.myglobal); // "hello"
 console.log(window["myglobal"]); // "hello"
 console.log(this.myglobal); // "hello"
 
-// reference
+// References
 // http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
 </script>
 </body>

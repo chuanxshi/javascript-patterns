@@ -7,31 +7,32 @@
 <body>
 <script>
 /* Title: Conditionals
-   Description: pattern and antipattern of using if else
-*/
+ * Description: pattern and antipattern of using if else
+ */
 
-// NOTE: Paul Irish states that the first statement is only an antipattern when optimizing for 
-// low-bandwidth source (such as for a bookmarklet).
-// Using the first statement will generally outperform the regex in a loop, and is faster than the
-// object literal for lower numbers of conditions (they generally even out around 10 conditions).
-// See http://jsperf.com/if-this-or-that
+/* NOTE: Paul Irish states that the first statement (normal pattern) is only an antipattern when optimizing for 
+ * low-bandwidth source (such as for a bookmarklet).
+ * Using the normal pattern will generally outperform the regex (alternative method 1) in a loop, 
+ * and is faster than the object literal (alternative method 2) for lower numbers of conditions,
+ * they generally even out around 10 conditions.
+ * See http://jsperf.com/if-this-or-that
+ */
 
-// Normal Pattern
+// normal pattern
 if (type === 'foo' || type === 'bar' ) {}
 
 
-/* alternative method 1 - regex test */
+// alternative method 1 - regex test 
 if ( /^(foo|bar)$/.test(type) ) {}
 
 
-/* alternative method 2 - object literal lookup (smaller if < 5 items) */
+// alternative method 2 - object literal lookup (smaller if < 5 items)
 if ( ({foo:1,bar:1})[type] ) {}
 
 
 /* alternative method 3 - binary-search-like approach
-   This approach is best when there are ranges of values for which to test
-*/
-
+ * This approach is best when there are ranges of values for which to test
+ */
 if (value == 0){
   return result0;
 } else if (value == 1){
@@ -94,9 +95,8 @@ if (value < 6){
 
 
 /* alternative method 4 - object/array lookup tables
-   Most useful when there is logical mapping between a single key and a single value
-*/
- 
+ * Most useful when there is logical mapping between a single key and a single value
+ */
 if (value == 0) {
   return result0;
 } else if (value == 1) {
@@ -111,7 +111,7 @@ var results = [result0, result1, result2];
 return results[value];
 
 
-// reference
+// References
 // http://paulirish.com/2009/perf/
 </script>
 </body>

@@ -25,7 +25,7 @@ var parent = {
 var child = object(parent);
 
 // testing 
-alert(child.name); // "Papa"
+console.log(child.name); // "Papa"
 
 
 // parent constructor
@@ -43,7 +43,7 @@ var papa = new Person();
 var kid = object(papa);
 // test that both the own property
 // and the prototype property were inherited
-kid.getName(); // "Adam"
+console.log(kid.getName()); // "Adam"
 
 
 // parent constructor
@@ -57,17 +57,21 @@ Person.prototype.getName = function () {
 };
 // inherit
 var kid = object(Person.prototype);
-typeof kid.getName; // "function", because it was in the prototype
-typeof kid.name; // "undefined", because only the prototype was inherited
+console.log(typeof kid.getName); // "function", because it was in the prototype
+console.log(typeof kid.name); // "undefined", because only the prototype was inherited
 
 
 /* Addition to ECMAScript 5 */
 var child = Object.create(parent);
 
 var child = Object.create(parent, {
-age: { value: 2 } // ECMA5 descriptor
+  age: { value: 2 } // ECMA5 descriptor
 });
-child.hasOwnProperty("age"); // true
+console.log(child.hasOwnProperty("age")); // true
+
+
+// reference
+// http://shop.oreilly.com/product/9780596806767.do
 </script>
 </body>
 </html>

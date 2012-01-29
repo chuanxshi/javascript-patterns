@@ -7,7 +7,7 @@
 <body>
 <script>
 /* Title: Mix-ins
-   Description: generally a pattern that should be avoided unless one is more comfortable with class than prototype
+   Description: copy from any number of objects and mix them all into a new object
 */
 
 function mix() {
@@ -25,11 +25,16 @@ function mix() {
 var cake = mix(
   {eggs: 2, large: true},
   {butter: 1, salted: true},
-  {flour: "3 cups"},
-  {sugar: "sure!"}
+  {flour: '3 cups'},
+  {sugar: 'sure!'}
 );
 
 console.dir(cake);
+
+
+// reference
+// http://addyosmani.com/resources/essentialjsdesignpatterns/book/#mixinpatternjavascript
+// http://shop.oreilly.com/product/9780596806767.do
 </script>
 </body>
 </html>

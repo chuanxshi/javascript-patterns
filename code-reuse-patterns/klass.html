@@ -6,9 +6,13 @@
 </head>
 <body>
 <script>
-/* Title: Klass
+/* Title: Klass (a pattern that should be generally avoided)
    Description: generally a pattern that should be avoided unless one is more comfortable with class than prototype
 */
+
+// Drawback: it brings the whole confusing notion of classes, which don’t technically exist in the language
+
+// Benefit: you can tweak the syntax and the conventions to resemble another of your favorite languages
 
 var klass = function (Parent, props) {
   

@@ -7,14 +7,15 @@
 <body>
 <script>
 /* Title: Primitive Wrappers
-   Description: JavaScript has 3 primitive wrapper objects: number, string, boolean
-*/
+ * Description: JavaScript has 3 primitive wrapper objects: number, string, boolean
+ */
 
 // antipattern
 // with wrappers
 var s = new String("my string");
 var n = new Number(101);
 var b = new Boolean(true);
+
 
 // preferred
 // without wrappers
@@ -45,6 +46,10 @@ greet.split(' ')[0]; // "Hello"
 greet.smile = true;
 // but it doesn't actually work
 console.log(typeof greet.smile); // "boolean"
+
+
+// References
+// http://shop.oreilly.com/product/9780596806767.do
 </script>
 </body>
 </html>

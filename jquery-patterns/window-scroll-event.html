@@ -7,13 +7,14 @@
 <body>
 <script>
 /* Title: window scroll event
-   Description: avoid attaching handlers to the window scroll event
-*/
+ * Description: avoid attaching handlers to the window scroll event
+ */
 
-// antipattern 
+// antipattern
 $(window).scroll(function() {
   $('.foo').something();
 });
+
 
 // preferred
 var outerPane = $details.find(".details-pane-outer"),
@@ -31,11 +32,8 @@ setInterval(function() {
   }
 }, 250);
 
-// reference
-// http://ejohn.org/blog/learning-from-twitter/
 
-
-// preferred v2, timeout instead of intervall - no unnecessary ticks
+// preferred v2, timeout instead of interval - no unnecessary ticks
 var scrollTimeout;  // global for any pending scrollTimeout
 var outerPane = $details.find(".details-pane-outer"),
   
@@ -55,6 +53,8 @@ scrollHandler = function() {
 };
 
 
+// References
+// http://ejohn.org/blog/learning-from-twitter/
 </script>
 </body>
 </html>

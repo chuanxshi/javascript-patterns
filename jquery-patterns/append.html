@@ -7,8 +7,8 @@
 <body>
 <script>
 /* Title: append
-   Description: use string concatenate and set innerHTML
-*/
+ * Description: use string concatenate and set innerHTML
+ */
 
 // antipattern
 // appending inside
@@ -16,6 +16,7 @@ $.each(reallyLongArray, function(count, item) {
   var newLI = '<li>' + item + '</li>';
   $('#ballers').append(newLI);
 });
+
 
 // documentFragment off-DOM
 var frag = document.createDocumentFragment();
@@ -25,6 +26,7 @@ $.each(reallyLongArray, function(count, item) {
 });
 $('#ballers')[0].appendChild(frag);
 
+
 // string concatenate and set innerHTML
 var myhtml = '';
 $.each(reallyLongArray, function(count, item) {
@@ -32,7 +34,8 @@ $.each(reallyLongArray, function(count, item) {
 });
 $('#ballers').html(myhtml);
 
-// reference
+
+// References
 // http://paulirish.com/2009/perf/
 </script>
 </body>

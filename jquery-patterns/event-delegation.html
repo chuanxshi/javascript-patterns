@@ -11,12 +11,14 @@
 */
 
 // antipattern
-$('a.trigger', $('#container')[0]).live('click', handlerFn)
+$('a.trigger', $('#container')[0]).live('click', handlerFn);
+
 
 // preferred
-$('#container').on('click', 'a.trigger', handlerFn)
+$('#container').on('click', 'a.trigger', handlerFn);
 
-// reference
+
+// References
 // http://paulirish.com/2009/perf/
 </script>
 </body>

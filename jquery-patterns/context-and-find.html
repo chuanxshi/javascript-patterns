@@ -7,20 +7,26 @@
 <body>
 <script>
 /* Title: context and find
-   Description: better to choose `find` over `context`
-*/
+ * Description: better to choose `find` over `context`
+ */
 
-// antipattern
+// antipattern 1
 var arms = $('div.robotarm', '#container');
-// preferred
+
+
+// preferred 1
 var arms = $('#container').find('div.robotarm');
 
-// antipattern
+
+// antipattern 2
 $('.reply_form', $(this).closest('.comment')).hide();
-// preferred
+
+
+// preferred 2
 $(this).closest('.comment').find('.reply_form').hide();
 
-// reference
+
+// References
 // http://paulirish.com/2009/perf/
 </script>
 </body>

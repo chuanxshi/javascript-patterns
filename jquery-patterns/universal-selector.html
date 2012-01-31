@@ -7,21 +7,27 @@
 <body>
 <script>
 /* Title: Universal Selector
-   Description: better use of universal selector
-*/
+ * Description: better use of universal selector
+ */
 
-// antipattern
+// antipattern 1
 $('.buttons > *')
-// preferred
+
+
+// preferred 1
 $('.buttons').children()
 
-// antipattern
+
+// antipattern 2
 $('.gender :radio')
 $('.gender *:radio')
-// preferred
+
+
+// preferred 2
 $('.gender input:radio')
 
-// reference
+
+// References
 // http://paulirish.com/2009/perf/
 </script>
 </body>

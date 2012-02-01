@@ -1,33 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head>
-<title>JavaScript Patterns</title>
-<meta charset="utf-8">
-</head>
-<body>
-<script>
-/* Title: context and find
- * Description: better to choose `find` over `context`
- */
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			/* Title: context and find
+			 * Description: better to choose `find` over `context`
+			 */
 
-// antipattern 1
-var arms = $('div.robotarm', '#container');
-
-
-// preferred 1
-var arms = $('#container').find('div.robotarm');
+			// antipattern 1
+			var arms = $('div.robotarm', '#container');
 
 
-// antipattern 2
-$('.reply_form', $(this).closest('.comment')).hide();
+			// preferred 1
+			var arms = $('#container').find('div.robotarm');
 
 
-// preferred 2
-$(this).closest('.comment').find('.reply_form').hide();
+			// antipattern 2
+			$('.reply_form', $(this).closest('.comment')).hide();
 
 
-// References
-// http://paulirish.com/2009/perf/
-</script>
-</body>
+			// preferred 2
+			$(this).closest('.comment').find('.reply_form').hide();
+
+
+			// References
+			// http://paulirish.com/2009/perf/
+		</script>
+	</body>
 </html>

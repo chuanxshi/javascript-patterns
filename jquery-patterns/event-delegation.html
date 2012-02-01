@@ -1,25 +1,25 @@
 <!doctype html>
 <html lang="en">
-<head>
-<title>JavaScript Patterns</title>
-<meta charset="utf-8">
-</head>
-<body>
-<script>
-/* Title: event delegation
-   Description: event delegation pattern and antipattern
-*/
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			/* Title: event delegation
+			 Description: event delegation pattern and antipattern
+			 */
 
-// antipattern
-$('a.trigger', $('#container')[0]).live('click', handlerFn);
-
-
-// preferred
-$('#container').on('click', 'a.trigger', handlerFn);
+			// antipattern
+			$('a.trigger', $('#container')[0]).live('click', handlerFn);
 
 
-// References
-// http://paulirish.com/2009/perf/
-</script>
-</body>
+			// preferred
+			$('#container').on('click', 'a.trigger', handlerFn);
+
+
+			// References
+			// http://paulirish.com/2009/perf/
+		</script>
+	</body>
 </html>

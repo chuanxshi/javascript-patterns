@@ -1,29 +1,29 @@
 <!doctype html>
 <html lang="en">
-<head>
-<title>JavaScript Patterns</title>
-<meta charset="utf-8">
-</head>
-<body>
-<script>
-/* Title: Decending from id
- * Description: be more specific, better to descend from an id
- */
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			/* Title: Decending from id
+			 * Description: be more specific, better to descend from an id
+			 */
 
-// antipattern
-var arms = $('.container div.robotarm');
-
-
-// better
-var arms = $('#container div.robotarm');
+			// antipattern
+			var arms = $('.container div.robotarm');
 
 
-// preferred
-var arms = $('#container').find('div.robotarm');
+			// better
+			var arms = $('#container div.robotarm');
 
 
-// References
-// http://paulirish.com/2009/perf/
-</script>
-</body>
+			// preferred
+			var arms = $('#container').find('div.robotarm');
+
+
+			// References
+			// http://paulirish.com/2009/perf/
+		</script>
+	</body>
 </html>

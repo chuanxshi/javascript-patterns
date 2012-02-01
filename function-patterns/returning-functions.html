@@ -1,40 +1,40 @@
 <!doctype html>
 <html lang="en">
-<head>
-<title>JavaScript Patterns</title>
-<meta charset="utf-8">
-</head>
-<body>
-<script>
-/* Title: Returning functions
-   Description: one function returns another function or create another function on-demand
-*/
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			/* Title: Returning functions
+			 Description: one function returns another function or create another function on-demand
+			 */
 
-var setup = function () {
-  console.log(1);
-  return function () {
-    console.log(2);
-  };
-};
-// using the setup function
-var my = setup(); // alerts 1
-my(); // alerts 2
+			var setup = function () {
+				console.log(1);
+				return function () {
+					console.log(2);
+				};
+			};
+			// using the setup function
+			var my = setup(); // alerts 1
+			my(); // alerts 2
 
-var setup = function (count) {
-	var count = 0;
-  return function () {
-    return (count += 1);
-  };
-};
-// usage
-var next = setup();
-//next(); // returns 1
-//next(); // returns 2
-//next(); // returns 3
+			var setup = function (count) {
+				var count = 0;
+				return function () {
+					return (count += 1);
+				};
+			};
+			// usage
+			var next = setup();
+			//next(); // returns 1
+			//next(); // returns 2
+			//next(); // returns 3
 
-// reference
-// http://www.jspatterns.com/
-// http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate
-</script>
-</body>
+			// reference
+			// http://www.jspatterns.com/
+			// http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate
+		</script>
+	</body>
 </html>

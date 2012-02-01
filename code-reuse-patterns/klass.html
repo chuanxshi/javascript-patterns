@@ -1,158 +1,167 @@
 ﻿<!doctype html>
 <html lang="en">
-<head>
-<title>JavaScript Patterns</title>
-<meta charset="utf-8">
-</head>
-<body>
-<script>
-/* Title: Klass (a pattern that should be generally avoided)
-   Description: generally a pattern that should be avoided unless one is more comfortable with class than prototype
-*/
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			/* Title: Klass (a pattern that should be generally avoided)
+			 Description: generally a pattern that should be avoided unless one is more comfortable with class than prototype
+			 */
 
-// Drawback: it brings the whole confusing notion of classes, which don’t technically exist in the language
+			// Drawback: it brings the whole confusing notion of classes, which don’t technically exist in the language
 
-// Benefit: you can tweak the syntax and the conventions to resemble another of your favorite languages
+			// Benefit: you can tweak the syntax and the conventions to resemble another of your favorite languages
 
-var klass = function (Parent, props) {
-  
-  var Child, F, i;
-  
-  // 1.
-  // new constructor
-  Child = function () {
-    if (Child.uber && Child.uber.hasOwnProperty("__construct")) {
-      Child.uber.__construct.apply(this, arguments);
-    }
-    if (Child.prototype.hasOwnProperty("__construct")) {
-      Child.prototype.__construct.apply(this, arguments);
-    }
-  };
-  
-  // 2.
-  // inherit
-  Parent = Parent || Object;
-  F = function () {};
-  F.prototype = Parent.prototype;
-  Child.prototype = new F();
-  Child.uber = Parent.prototype;
-  Child.prototype.constructor = Child;
-  
-  // 3.
-  // add implementation methods
-  for (i in props) {
-    if (props.hasOwnProperty(i)) {
-      Child.prototype[i] = props[i];
-    }
-  }
-  
-  // return the "class"
-  return Child;
-};
+			var klass = function (Parent, props) {
 
-var Man = klass(null, {
-  __construct: function (what) {
-    console.log("Man's constructor");
-    this.name = what;
-  },
-  getName: function () {
-    return this.name;
-  }
-});
+				var Child, F, i;
 
-var first = new Man('Adam'); // logs "Man's constructor"
-first.getName(); // "Adam"
+				// 1.
+				// new constructor
+				Child = function () {
+					if (Child.uber && Child.uber.hasOwnProperty("__construct")) {
+						Child.uber.__construct.apply(this, arguments);
+					}
+					if (Child.prototype.hasOwnProperty("__construct")) {
+						Child.prototype.__construct.apply(this, arguments);
+					}
+				};
 
-var SuperMan = klass(Man, {
-  __construct: function (what) {
-    console.log("SuperMan's constructor");
-  },
-  getName: function () {
-    var name = SuperMan.uber.getName.call(this);
-    return "I am " + name;
-  }
-});
+				// 2.
+				// inherit
+				Parent = Parent || Object;
+				F = function () {
+				};
+				F.prototype = Parent.prototype;
+				Child.prototype = new F();
+				Child.uber = Parent.prototype;
+				Child.prototype.constructor = Child;
 
-var clark = new SuperMan('Clark Kent');
-clark.getName(); // "I am Clark Kent"
+				// 3.
+				// add implementation methods
+				for (i in props) {
+					if (props.hasOwnProperty(i)) {
+						Child.prototype[i] = props[i];
+					}
+				}
 
-console.log(clark instanceof Man); // true
-console.log(clark instanceof SuperMan); // true
-<!doctype html>
-<html lang="en">
-<head>
-<title>JavaScript Patterns</title>
-<meta charset="utf-8">
-</head>
-<body>
-<script>
-/* Title: Classical Pattern #5 - A Temporary Constructor (a pattern that should be generally avoided)
-   Description: first borrow the constructor and then also set the child's prototype to point to a new instance of the constructor
-*/
+				// return the "class"
+				return Child;
+			};
 
-/* Basic */
-/*function inherit(C, P) {
-  var F = function () {};
-  F.prototype = P.prototype;
-  C.prototype = new F();
-}*/
+			var Man = klass(null, {
+				__construct:function (what) {
+					console.log("Man's constructor");
+					this.name = what;
+				},
+				getName:function () {
+					return this.name;
+				}
+			});
 
-/* Storing the Superclass */
-/*function inherit(C, P) {
-  var F = function () {};
-  F.prototype = P.prototype;
-  C.prototype = new F();
-  C.uber = P.prototype;
-}*/
+			var first = new Man('Adam'); // logs "Man's constructor"
+			first.getName(); // "Adam"
 
-/* Resetting the Constructor Pointer */
-/*function inherit(C, P) {
-  var F = function () {};
-  F.prototype = P.prototype;
-  C.prototype = new F();
-  C.uber = P.prototype;
-  C.prototype.constructor = C;
-}*/
+			var SuperMan = klass(Man, {
+				__construct:function (what) {
+					console.log("SuperMan's constructor");
+				},
+				getName:function () {
+					var name = SuperMan.uber.getName.call(this);
+					return "I am " + name;
+				}
+			});
 
-/* in closure */
-var inherit = (function () {
-  var F = function () {};
-  return function (C, P) {
-    F.prototype = P.prototype;
-    C.prototype = new F();
-    C.uber = P.prototype;
-    C.prototype.constructor = C;
-  }
-}());
+			var clark = new SuperMan('Clark Kent');
+			clark.getName(); // "I am Clark Kent"
 
-function Parent(name) {
-  this.name = name || 'Adam';
-}
+			console.log(clark instanceof Man); // true
+			console.log(clark instanceof SuperMan); // true
+			<
+			!doctype
+			html >
+			< html
+			lang = "en" >
+					< head >
+					< title > JavaScript
+			Patterns < /title>
+			< meta
+			charset = "utf-8" >
+					< /head>
+					< body >
+					< script >
+			/* Title: Classical Pattern #5 - A Temporary Constructor (a pattern that should be generally avoided)
+			 Description: first borrow the constructor and then also set the child's prototype to point to a new instance of the constructor
+			 */
 
-// adding functionality to the prototype
-Parent.prototype.say = function () {
-  return this.name;
-};
+			/* Basic */
+			/*function inherit(C, P) {
+			 var F = function () {};
+			 F.prototype = P.prototype;
+			 C.prototype = new F();
+			 }*/
 
-// child constructor
-function Child(name) {}
+			/* Storing the Superclass */
+			/*function inherit(C, P) {
+			 var F = function () {};
+			 F.prototype = P.prototype;
+			 C.prototype = new F();
+			 C.uber = P.prototype;
+			 }*/
 
-inherit(Child, Parent);
+			/* Resetting the Constructor Pointer */
+			/*function inherit(C, P) {
+			 var F = function () {};
+			 F.prototype = P.prototype;
+			 C.prototype = new F();
+			 C.uber = P.prototype;
+			 C.prototype.constructor = C;
+			 }*/
 
-var kid = new Child(); 
-console.log(kid.name); // undefined 
-console.log(typeof kid.say); // function 
-kid.name = 'Patrick'; 
-console.log(kid.say()); // Patrick 
-console.log(kid.constructor.name); // Child
-console.log(kid.constructor === Parent); // false
+			/* in closure */
+			var inherit = (function () {
+				var F = function () {
+				};
+				return function (C, P) {
+					F.prototype = P.prototype;
+					C.prototype = new F();
+					C.uber = P.prototype;
+					C.prototype.constructor = C;
+				}
+			}());
+
+			function Parent(name) {
+				this.name = name || 'Adam';
+			}
+
+			// adding functionality to the prototype
+			Parent.prototype.say = function () {
+				return this.name;
+			};
+
+			// child constructor
+			function Child(name) {
+			}
+
+			inherit(Child, Parent);
+
+			var kid = new Child();
+			console.log(kid.name); // undefined
+			console.log(typeof kid.say); // function
+			kid.name = 'Patrick';
+			console.log(kid.say()); // Patrick
+			console.log(kid.constructor.name); // Child
+			console.log(kid.constructor === Parent); // false
 
 
-// reference
-// http://shop.oreilly.com/product/9780596806767.do
-</script>
-</body>
+			// reference
+			// http://shop.oreilly.com/product/9780596806767.do
+		</script>
+	</body>
 </html>
 </script>
-</body>
-</html>
+<
+/body>
+< /html>

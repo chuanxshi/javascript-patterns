@@ -1,25 +1,25 @@
 <!doctype html>
 <html lang="en">
-<head>
-<title>JavaScript Patterns</title>
-<meta charset="utf-8">
-</head>
-<body>
-<script>
-/* Title: Be Specific when Needed
- * Description: no need to be over-specific
- */
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			/* Title: Be Specific when Needed
+			 * Description: no need to be over-specific
+			 */
 
-// antipattern
-var arms = $('.data table.attendees td.brad');
-
-
-// preferred
-var arms = $('.data td.brad');
+			// antipattern
+			var arms = $('.data table.attendees td.brad');
 
 
-// References
-// http://paulirish.com/2009/perf/
-</script>
-</body>
+			// preferred
+			var arms = $('.data td.brad');
+
+
+			// References
+			// http://paulirish.com/2009/perf/
+		</script>
+	</body>
 </html>

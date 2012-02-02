@@ -107,7 +107,12 @@
 			} else if (value == 2) {
 				return result2;
 			}
-
+			
+			// define the array of results
+			var results = [result0, result1, result2];
+			// return the correct result
+			return results[value];
+			
 			
 			/* alternative method 5 - only using logical operators
 			 * Shorter way to use simple statements
@@ -126,12 +131,7 @@
 			type == 'foo' && type2 == 'bar' && result == 3 && (result=0); //parentheses avoid "invalid assignment left-hand side" error
 			console.log(result); //0
 			type == 'OOF' || result++; //equivalent: type != 'OFF' && result++;
-			console.log(result); //1
-
-			// define the array of results
-			var results = [result0, result1, result2];
-			// return the correct result
-			return results[value];
+			console.log(result); //1			
 
 
 			// References

@@ -1,51 +1,52 @@
 <!doctype html>
 <html lang="en">
-<head>
-<title>JavaScript Patterns</title>
-<meta charset="utf-8">
-</head>
-<body>
-<script>
-/* Title: Callback patterns
-   Description: when you pass function A to function B as a parameter, function A is a callback function
-*/
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			/* Title: Callback patterns
+			 Description: when you pass function A to function B as a parameter, function A is a callback function
+			 */
 
-var complexComputation = function () { /* do some complex stuff and return a node */ };
+			var complexComputation = function () { /* do some complex stuff and return a node */
+			};
 
-var findNodes = function (callback) {
-  var nodes = [];
+			var findNodes = function (callback) {
+				var nodes = [];
 
-  // check if callback is callable
-  if (typeof callback !== "function") {
-    callback = false;
-  }
-  
-  var node = complexComputation();
+				// check if callback is callable
+				if (typeof callback !== "function") {
+					callback = false;
+				}
 
-  if (callback) {
-    callback(node);
-  }
-    
-  nodes.push(node);
-  return nodes;
-};
+				var node = complexComputation();
 
-// a callback function
-var hide = function (node) {
-  node.style.display = "none";
-};
+				if (callback) {
+					callback(node);
+				}
 
-// find the nodes and hide them as you go
-var hiddenNodes = findNodes(hide);
+				nodes.push(node);
+				return nodes;
+			};
 
-// you can also use an anonymous function, like this:
-var blockNodes = findNodes(function (node) {
-  node.style.display = 'block';	
-});
+			// a callback function
+			var hide = function (node) {
+				node.style.display = "none";
+			};
 
-// reference
-// http://www.jspatterns.com/
-// http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate
-</script>
-</body>
+			// find the nodes and hide them as you go
+			var hiddenNodes = findNodes(hide);
+
+			// you can also use an anonymous function, like this:
+			var blockNodes = findNodes(function (node) {
+				node.style.display = 'block';
+			});
+
+			// reference
+			// http://www.jspatterns.com/
+			// http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate
+		</script>
+	</body>
 </html>

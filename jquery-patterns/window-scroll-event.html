@@ -1,60 +1,61 @@
 ﻿<!doctype html>
 <html lang="en">
-<head>
-<title>JavaScript Patterns</title>
-<meta charset="utf-8">
-</head>
-<body>
-<script>
-/* Title: window scroll event
- * Description: avoid attaching handlers to the window scroll event
- */
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			/* Title: window scroll event
+			 * Description: avoid attaching handlers to the window scroll event
+			 */
 
-// antipattern
-$(window).scroll(function() {
-  $('.foo').something();
-});
-
-
-// preferred
-var outerPane = $details.find(".details-pane-outer"),
-  didScroll = false;
-$(window).scroll(function() {
-  didScroll = true;
-});
-
-setInterval(function() {
-  if ( didScroll ) {
-    didScroll = false;
-    // Check your page position and then
-    // Load in more results
-    // outerPane.html();
-  }
-}, 250);
+			// antipattern
+			$(window).scroll(function () {
+				$('.foo').something();
+			});
 
 
-// preferred v2, timeout instead of interval - no unnecessary ticks
-var scrollTimeout;  // global for any pending scrollTimeout
-var outerPane = $details.find(".details-pane-outer"),
-  
-$(window).scroll(function() {
-  if (scrollTimeout) {
-	// clear the timeout, if one is pending
-    clearTimeout(scrollTimeout);
-	scrollTimeout = null;
-  }
-  scrollTimeout = setTimeout(scrollHandler,250);
-});
+			// preferred
+			var outerPane = $details.find(".details-pane-outer"),
+					didScroll = false;
+			$(window).scroll(function () {
+				didScroll = true;
+			});
 
-scrollHandler = function() {
-    // Check your page position and then
-    // Load in more results
-    // outerPane.html();
-};
+			setInterval(function () {
+				if (didScroll) {
+					didScroll = false;
+					// Check your page position and then
+					// Load in more results
+					// outerPane.html();
+				}
+			}, 250);
 
 
-// References
-// http://ejohn.org/blog/learning-from-twitter/
-</script>
-</body>
+			// preferred v2, timeout instead of interval - no unnecessary ticks
+			var scrollTimeout;  // global for any pending scrollTimeout
+			var outerPane = $details.find(".details-pane-outer"),
+
+					$
+			(window).scroll(function () {
+				if (scrollTimeout) {
+					// clear the timeout, if one is pending
+					clearTimeout(scrollTimeout);
+					scrollTimeout = null;
+				}
+				scrollTimeout = setTimeout(scrollHandler, 250);
+			});
+
+			scrollHandler = function () {
+				// Check your page position and then
+				// Load in more results
+				// outerPane.html();
+			};
+
+
+			// References
+			// http://ejohn.org/blog/learning-from-twitter/
+		</script>
+	</body>
 </html>

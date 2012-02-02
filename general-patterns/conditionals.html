@@ -108,6 +108,26 @@
 				return result2;
 			}
 
+			
+			/* alternative method 5 - only using logical operators
+			 * Shorter way to use simple statements
+			 */
+			var 
+				type = 'foo',
+				type2 = 'bar',
+				result = 0;
+				
+			type == 'foo' && result++;
+			console.log(result); // 1
+			!type == 'foo' || result++;
+			console.log(result); // 2
+			type == 'foo' && type2 == 'bar' && result++;
+			console.log(result); //3
+			type == 'foo' && type2 == 'bar' && result == 3 && (result=0); //parentheses avoid "invalid assignment left-hand side" error
+			console.log(result); //0
+			type == 'OOF' || result++; //equivalent: type != 'OFF' && result++;
+			console.log(result); //1
+
 			// define the array of results
 			var results = [result0, result1, result2];
 			// return the correct result

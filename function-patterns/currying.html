@@ -13,7 +13,7 @@
 			/***
 			 function application
 			 ***/
-// define a function
+			// define a function
 			var sayHi = function (who) {
 				return "Hello" + (who ? ", " + who : "") + "!";
 			};
@@ -42,10 +42,10 @@
 			 partial application
 			 ***/
 
-// for illustration purposes
-// not valid JavaScript
+			// for illustration purposes
+			// not valid JavaScript
 
-// we have this function
+			// we have this function
 			function add(x, y) {
 				return x + y;
 			}
@@ -54,20 +54,12 @@
 			add(5, 4);
 
 			// step 1 -- substitute one argument
-			function add(5
-			,
-			y
-			)
-			{
+			function add(5, y) {
 				return 5 + y;
 			}
 
 			// step 2 -- substitute the other argument
-			function add(5
-			,
-			4
-			)
-			{
+			function add(5, 4) {
 				return 5 + 4;
 			}
 
@@ -75,8 +67,8 @@
 			 currying
 			 ***/
 
-// a curried add()
-// accepts partial list of arguments
+			// a curried add()
+			// accepts partial list of arguments
 			function add(x, y) {
 				var oldx = x, oldy = y;
 				if (typeof oldy === "undefined") { // partial
@@ -124,7 +116,7 @@
 
 				function funcWithArgsFrozen(frozenargs) {
 					return function () {
-						// could do an optmisation here - if called with no arguments
+						// could do an optimisation here - if called with no arguments
 						// return exactly this function.
 						var args = Array.prototype.slice.call(arguments);
 						var newArgs = frozenargs.concat(args);
@@ -135,8 +127,6 @@
 						}
 					};
 				}
-
-				;
 
 				return funcWithArgsFrozen([]);
 			}

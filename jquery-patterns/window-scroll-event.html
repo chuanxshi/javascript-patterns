@@ -35,10 +35,9 @@
 
 			// preferred v2, timeout instead of interval - no unnecessary ticks
 			var scrollTimeout;  // global for any pending scrollTimeout
-			var outerPane = $details.find(".details-pane-outer"),
+			var outerPane = $details.find(".details-pane-outer");
 
-					$
-			(window).scroll(function () {
+			$(window).scroll(function () {
 				if (scrollTimeout) {
 					// clear the timeout, if one is pending
 					clearTimeout(scrollTimeout);

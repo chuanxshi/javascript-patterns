@@ -16,14 +16,10 @@
 			var findNodes = function (callback) {
 				var nodes = [];
 
-				// check if callback is callable
-				if (typeof callback !== "function") {
-					callback = false;
-				}
-
 				var node = complexComputation();
 
-				if (callback) {
+				// call if callback is callable
+				if (typeof callback == "function") {
 					callback(node);
 				}
 

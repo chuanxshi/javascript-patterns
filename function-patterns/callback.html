@@ -18,11 +18,11 @@
 
 				var node = complexComputation();
 
-				// call if callback is callable
+				// call if callback is callable - this will swallow code errors if I pass in a wrong tyep of parameter - I don't know what is the "correct" way to fix it, but I strongly feel it is not the right way to swallow errors
 				if (typeof callback === "function") {
 					callback(node);
-				}
-
+				} 
+                                    
 				nodes.push(node);
 				return nodes;
 			};

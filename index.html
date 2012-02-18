@@ -50,14 +50,15 @@
       <li><a href="#literals-and-constructor">Literals and Constructor Patterns</a></li>
       <li><a href="#function-patterns">Function Patterns</a></li>
       <li><a href="#object-creation-patterns">Object Creation Patterns</a></li>
+      <li><a href="#code-reuse-patterns">Code Reuse Patterns</a></li> 
       <li><a href="#design-patterns">Design Patterns</a></li>  
     </ul>
     </nav>
   </header>
   <div role="main">
     <section id="intro">
-      <p>A JavaScript pattern and antipattern code collection that covers function patterns, jQuery patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns (<em>upcoming</em>), DOM and browser patterns (<em>upcoming</em>).</p>
-      <p><a href="http://www.blog.highub.com/tag/jsPatternRoundUp/" target="_blank">Weekly roundups</a> (pattern updates) will be regularly <a href="http://twitter.com/shichuan" target="_blank">tweeted</a>.</p>
+      <p>A JavaScript pattern and antipattern code collection that covers function patterns, jQuery patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns, DOM and browser patterns (<em>upcoming</em>).</p>
+      New pattern updates will be <a href="http://twitter.com/shichuan" target="_blank">tweeted</a>.</p>
     </section>
     <section id="general-patterns">
       <h2>General Patterns</h2>
@@ -149,6 +150,26 @@
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/object-constants.html" target="_blank">Object Constants</a> - an implementation of a contant object provides set, inDefined and get methods</li>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/chaining.html" target="_blank">Chaining Pattern</a> - it enables you to call methods on an object one after the other</li>
         <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/object-creation-patterns/sugar-method.html" target="_blank">method() Method</a> - adding convenient funcationality to a language</li>
+      </ul>
+    </section>
+
+    <section id="code-reuse-patterns">
+      <h2>Code Reuse Patterns</h2>
+      <h3>Classical Patterns (patterns that should be generally avoided)</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/code-reuse-patterns/cp1-default.html" target="_blank">The default pattern</a> - create an object using the Parent() constructor and assign this object to the Child()'s prototype</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/code-reuse-patterns/cp2-rent-a-constructor.html" target="_blank">Rent a constructor</a> - it borrows the parent constructor, passing the child object to be bound to this and also forwarding any arguments</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/code-reuse-patterns/cp3-rent-and-set-prototype.html" target="_blank">Rent and Set Prototype</a> - restricts object creation for a class to only one instance</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/code-reuse-patterns/cp4-share-the-prototype.html" target="_blank">Share the Prototype</a> - restricts object creation for a class to only one instance</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/code-reuse-patterns/cp5-a-temporary-constructor.html" target="_blank">A Temporary Constructor</a> - first borrow the constructor and then also set the child's prototype to point to a new instance of the constructor</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/code-reuse-patterns/klass.html" target="_blank">Klass</a> - generally a pattern that should be avoided unless one is more comfortable with class than prototype</li>
+      </ul>
+      <h3>Preferred Patterns</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/code-reuse-patterns/prototypal-inheritance.html" target="_blank">Prototypal Inheritance</a> - objects inherit from other objects</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/code-reuse-patterns/inheritance-by-copying-properties.html" target="_blank">Inheritance by Copying Properties</a> - an object gets functionality from another object, simply by copying it</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/code-reuse-patterns/mix-ins.html" target="_blank">Mix-ins</a> - copy from any number of objects and mix them all into a new object</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/code-reuse-patterns/borrowing-methods.html" target="_blank">Borrowing Methods</a> - reuse one or two methods of an existing object without forming a parent-child relationship with that object</li>
       </ul>
     </section>
     

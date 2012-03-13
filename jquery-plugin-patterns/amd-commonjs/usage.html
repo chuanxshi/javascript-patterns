@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="pluginCore.js"></script>
+		<script src="pluginExtension.js"></script>
+
+		<script type="text/javascript">
+
+		$(function(){
+
+		    // Our plugin 'core' is exposed under a core namespace in
+		    // this example, which we first cache
+		    var core = $.core;
+
+		    // Then use use some of the built-in core functionality to
+		    // highlight all divs in the page yellow
+		    core.highlightAll();
+
+		    // Access the plugins (extensions) loaded into the 'plugin'
+		    // namespace of our core module:
+
+		    // Set the first div in the page to have a green background.
+		    core.plugin.setGreen("div:first");
+		    // Here we're making use of the core's 'highlight' method
+		    // under the hood from a plugin loaded in after it
+
+		    // Set the last div to the 'errorColor' property defined in
+		    // our core module/plugin. If you review the code further down,
+		    // you'll see how easy it is to consume properties and methods
+		    // between the core and other plugins
+		    core.plugin.setRed('div:last');
+		});
+
+		</script>
+		
+		<script>
+		// References
+		// http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/
+		</script>
+	</body>
+</html>

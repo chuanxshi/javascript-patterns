@@ -7,96 +7,103 @@
 	<body>
 		<script>
 		/*!
-		 * jQuery UI Widget factory "bridge" plugin boilerplate
-		 * Author: @erichynds
-		 * Further changes, additional comments: @addyosmani
+		 * jQuery UI Widget + RequireJS module boilerplate (for 1.8/9+)
+		 * Authors: @jrburke, @addyosmani
 		 * Licensed under the MIT license
 		 */
 
-		// a "widgetName" object constructor
-		// required: this must accept two arguments,
-		// options: an object of configuration options
-		// element: the DOM element the instance was created on
-		var widgetName = function( options, element ){
-		  this.name = "myWidgetName";
-		  this.options = options;
-		  this.element = element;
-		  this._init();
-		}
+		// Note from James:
+		//
+		// This assumes you are using the RequireJS+jQuery file, and
+		// that the following files are all in the same directory:
+		//
+		// - require-jquery.js
+		// - jquery-ui.custom.min.js (custom jQuery UI build with widget factory)
+		// - templates/
+		//    - asset.html
+		// - ao.myWidget.js 
 
-		// the "widgetName" prototype
-		widgetName.prototype = {
+		// Then you can construct the widget like so: 
 
-		    // _create will automatically run the first time this
-		    // widget is called
-		    _create: function(){
-		        // creation code
-		    },
+		//ao.myWidget.js file:
+		define("ao.myWidget", ["jquery", "text!templates/asset.html", "jquery-ui.custom.min","jquery.tmpl"], function ($, assetHtml) {
 
-		    // required: initialization logic for the plugin goes into _init
-		    // This fires when your instance is first created and when
-		    // attempting to initialize the widget again (by the bridge)
-		    // after it has already been initialized.
-		    _init: function(){
-		        // init code
-		    },
+		    // define your widget under a namespace of your choice
+		    // 'ao' is used here as a demonstration
+		    $.widget( "ao.myWidget", { 
 
-		    // required: objects to be used with the bridge must contain an
-		    // 'option'. Post-initialization, the logic for changing options
-		    // goes here.
-		    option: function( key, value ){
+		        // Options to be used as defaults
+		        options: {}, 
 
-		        // optional: get/change options post initialization
-		        // ignore if you don't require them.
+		        // Set up widget (e.g. create element, apply theming,
+		        // bind events, etc.)
+		        _create: function () {
 
-		        // signature: $('#foo').bar({ cool:false });
-		        if( $.isPlainObject( key ) ){
-		            this.options = $.extend( true, this.options, key );
+		            // _create will automatically run the first time
+		            // this widget is called. Put the initial widget
+		            // set-up code here, then you can access the element
+		            // on which the widget was called via this.element.
+		            // The options defined above can be accessed via
+		            // this.options
 
-		        // signature: $('#foo').option('cool'); - getter
-		        } else if ( key && typeof value === "undefined" ){
-		            return this.options[ key ];
+		            //this.element.addStuff();
+		            //this.element.addStuff();
+		            //this.element.tmpl(assetHtml).appendTo(this.content);
+		        },
 
-		        // signature: $('#foo').bar('option', 'baz', false);
-		        } else {
-		            this.options[ key ] = value;
+		        // Destroy an instantiated plugin and clean up modifications
+		        // that the widget has made to the DOM
+		        destroy: function () {
+		            //t his.element.removeStuff();
+		            // For UI 1.8, destroy must be invoked from the base
+		            // widget
+		            $.Widget.prototype.destroy.call( this );
+		            // For UI 1.9, define _destroy instead and don't worry
+		            // about calling the base widget
+		        },
+
+		        methodB: function ( event ) {
+		            // _trigger dispatches callbacks the plugin user can
+		            // subscribe to
+		            //signature: _trigger( "callbackName" , [eventObject],
+		            // [uiObject] )
+		            this._trigger('methodA', event, {
+		                key: value
+		            });
+		        },
+
+		        methodA: function ( event ) {
+		            this._trigger('dataChanged', event, {
+		                key: value
+		            });
+		        },
+
+		        //Respond to any changes the user makes to the option method
+		        _setOption: function ( key, value ) {
+		            switch (key) {
+		            case "someValue":
+		                //this.options.someValue = doSomethingWith( value );
+		                break;
+		            default:
+		                //this.options[ key ] = value;
+		                break;
+		            }
+
+		            // For UI 1.8, _setOption must be manually invoked from
+		            // the base widget
+		            $.Widget.prototype._setOption.apply( this, arguments );
+		            // For UI 1.9 the _super method can be used instead
+		            //this._super( "_setOption", key, value );
 		        }
 
-		        // required: option must return the current instance.
-		        // When re-initializing an instance on elements, option
-		        // is called first and is then chained to the _init method.
-		        return this;
-		    },
+		        //somewhere assetHtml would be used for templating, depending
+		        // on your choice.
+		    });
+		}); 
 
-		    // notice no underscore is used for public methods
-		    publicFunction: function(){
-		        console.log('public function');
-		    },
-
-		    // underscores are used for private methods
-		    _privateFunction: function(){
-		        console.log('private function');
-		    }
-		};
-
-		// usage:
-
-		// connect the widget obj to jQuery's API under the "foo" namespace
-		// $.widget.bridge("foo", widgetName);
-
-		// create an instance of the widget for use
-		// var instance = $("#elem").foo({
-		//     baz: true
-		// });
-
-		// your widget instance exists in the elem's data
-		// instance.data("foo").element; // => #elem element
-
-		// bridge allows you to call public methods...
-		// instance.foo("publicFunction"); // => "public method"
-
-		// bridge prevents calls to internal methods
-		// instance.foo("_privateFunction"); // => #elem element
+		// If you are going to use the RequireJS optimizer to combine files
+		// together, you can leave off the "ao.myWidget" argument to define:
+		// define(["jquery", "text!templates/asset.html", "jquery-ui.custom.min"], …
 
 
 		// References

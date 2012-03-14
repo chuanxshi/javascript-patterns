@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+		/*!
+		 * jQuery basic plugin boilerplate
+		 */
+
+		/*
+		The most basic form of jQuery plugin
+		This is great for compactness
+		*/
+
+		$.fn.myPluginName = function() {
+		    // your plugin logic
+		};
+
+
+		/*
+		A better foundation to build on
+		Here, we’ve wrapped our plugin logic in an anonymous function. To ensure that our use of the $ sign as a shorthand creates no conflicts between jQuery and other JavaScript libraries, we simply pass it to this closure, which maps it to the dollar sign, thus ensuring that it can’t be affected by anything outside of its scope of execution.
+		*/
+
+		(function( $ ){
+		  	$.fn.myPluginName = function() {
+		    	// your plugin logic
+		  	};
+		})( jQuery );
+
+
+		// References
+		// http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/
+		</script>
+	</body>
+</html>

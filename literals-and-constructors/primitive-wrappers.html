@@ -37,14 +37,13 @@
 			// but it doesn't actually work
 			console.log(typeof greet.smile); // "undefined"
 
-			// primitive string
+			// primitive wrapper
 			var greet = new String("Hello there");
-			// primitive is converted to an object
-			// in order to use the split() method
+			// split() method is called directly on the object
 			greet.split(' ')[0]; // "Hello"
-			// attemting to augment a primitive is not an error
+			// augment the object
 			greet.smile = true;
-			// but it doesn't actually work
+			// it works
 			console.log(typeof greet.smile); // "boolean"
 
 

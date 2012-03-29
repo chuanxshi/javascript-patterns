@@ -14,52 +14,52 @@
 		 */
 
 		;(function ( $ ) {
-		    if (!$.myNamespace) {
-		        $.myNamespace = {};
-		    };
+			if ( ! $.myNamespace ) {
+				$.myNamespace = {};
+			}
 
-		    $.myNamespace.myPluginName = function ( el, myFunctionParam, options ) {
-		        // To avoid scope issues, use 'base' instead of 'this'
-		        // to reference this class from internal events and functions.
-		        var base = this;
+			$.myNamespace.myPluginName = function ( el, myFunctionParam, options ) {
 
-		        // Access to jQuery and DOM versions of element
-		        base.$el = $(el);
-		        base.el = el;
+				// To avoid scope issues, use 'base' instead of 'this'
+				// to reference this class from internal events and functions.
+				var base = this;
 
-		        // Add a reverse reference to the DOM object
-		        base.$el.data( "myNamespace.myPluginName" , base );
+				// Access to jQuery and DOM versions of element
+				base.$el = $( el );
+				base.el = el;
 
-		        base.init = function () {
-		            base.myFunctionParam = myFunctionParam;
+				// Add a reverse reference to the DOM object
+				base.$el.data( "myNamespace.myPluginName" , base );
 
-		            base.options = $.extend({},
-		            $.myNamespace.myPluginName.defaultOptions, options);
+				base.init = function () {
+					base.myFunctionParam = myFunctionParam;
 
-		            // Put your initialization code here
-		        };
+					base.settings = $.extend( {}, $.myNamespace.myPluginName.defaults, options );
 
-		        // Sample Function, Uncomment to use
-		        // base.functionName = function( paramaters ){
-		        //
-		        // };
-		        // Run initializer
-		        base.init();
-		    };
+					// Put your initialization code here
 
-		    $.myNamespace.myPluginName.defaultOptions = {
-		        myDefaultValue: ""
-		    };
+				};
 
-		    $.fn.mynamespace_myPluginName = function
-		        ( myFunctionParam, options ) {
-		        return this.each(function () {
-		            (new $.myNamespace.myPluginName(this,
-		            myFunctionParam, options));
-		        });
-		    };
+				// Sample Function, Uncomment to use
+				// base.functionName = function( paramaters ){
+				//
+				// };
 
-		})( jQuery );
+				// Run initializer
+				base.init();
+			};
+
+			$.myNamespace.myPluginName.defaults = {
+				myDefaultValue: ""
+			};
+
+			$.fn.mynamespace_myPluginName = function( myFunctionParam, options ) {
+				return this.each( function () {
+					( new $.myNamespace.myPluginName( this, myFunctionParam, options ) );
+				});
+			};
+
+		} )( jQuery );
 
 
 		// References

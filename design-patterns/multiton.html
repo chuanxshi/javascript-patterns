@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JavaScript Patterns</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+/* Title: Multiton / Object Pool
+ Description: stores references to each object created for a class
+*/
+
+
+//example class
+function Widget() {
+  // cache
+  Widget.instances = Widget.instances || [];
+ 
+  // provide metadata
+  this.id = Widget.length;
+  
+  // store reference
+  Widget.instances.push(this);
+  // implicit return:
+  // return this;
+}
+
+//getInstance method
+Widget.getInstance = function (index) {
+    return Widget.instances[index];
+};
+
+
+new Widget();
+new Widget();
+Widget.instances.length === 2; //true
+Widget.instances[0].id === 1; //true
+Widget.instances[1] === Widget.getInstance(1); //true
+
+//Another example class uses the id to ensure prior
+//instances with the same id are removed from the object pool
+(function (global) {
+    var index = -1;
+    
+    function Widget(id) {
+        // provide metadata
+        //accept the id parameter to allow overwriting
+        this.id = id || (index += 1);
+      
+        // store reference
+        Widget.instances[this.id] = this;
+        // implicit return:
+        // return this;
+    }
+    
+    //cache
+    Widget.instances = {};
+    
+    //getInstance method
+    Widget.getInstance = function (index) {
+        return Widget.instances[index];
+    };
+    
+    return global.Widget = Widget;
+}(this));
+
+new Widget();
+Widget.getInstance(0).id = 0; //true
+
+var orig = new Widget();
+var compare = new Widget(1);
+compare.id === 1; //true
+compare === orig; //false
+
+new Widget("test");
+Widget.instances.test === Widget.getInstance("test"); //true
+
+//passing the id as a parameter does not increment the index
+new Widget().id === 2; //true
+
+
+//general reference about the multiton pattern: http://en.wikipedia.org/wiki/Multiton_pattern
+</script>
+</body>
+</html>

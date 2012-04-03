@@ -15,48 +15,48 @@
 
 		;(function ( $, window, document, undefined ) {
 
-			$.fn.pluginName = function ( options ) {
+		    $.fn.pluginName = function ( options ) {
 
-				// Here's a best practice for overriding 'defaults'
-				// with specified options. Note how, rather than a
-				// regular options object being passed as the second
-				// parameter, we instead refer to $.fn.pluginName.defaults
-				// explicitly, merging it with the options passed to the 
-				// plugin. This allows us to override defaults both
-				// globally and on a per-call level. 
+		        // Here's a best practice for overriding 'defaults'
+		        // with specified options. Note how, rather than a
+		        // regular defaults object being passed as the second
+		        // parameter, we instead refer to $.fn.pluginName.options
+		        // explicitly, merging it with the options passed directly
+		        // to the plugin. This allows us to override options both
+		        // globally and on a per-call level. 
 
-				settings = $.extend( {}, $.fn.pluginName.defaults, options );
+		        options = $.extend( {}, $.fn.pluginName.options, options );
 
-				return this.each( function () {
+		        return this.each(function () {
 
-					var elem = $( this );
+		            var elem = $(this);
 
-				});
-			};
+		        });
+		    };
 
-			// Globally overriding options
-			// Here are the publicly accessible defaults
-			// in case the user doesn't pass-in any or all
-			// possible options. The user is given a default
-			// experience but can optionally override the values 
-			// as required.
-			// eg. $fn.pluginName.key ='otherval';
+		    // Globally overriding options
+		    // Here are our publicly accessible default plugin options
+		    // that are available in case the user doesn't pass in all
+		    // of the values expected. The user is given a default
+		    // experience but can also override the values as necessary.
+		    // eg. $fn.pluginName.key ='otherval';
 
-			$.fn.pluginName.defaults = {
+		    $.fn.pluginName.options = {
 
-				key: "value",
-				myMethod: function ( elem, param ) {
+		        key: "value",
+		        myMethod: function ( elem, param ) {
 
-					// to do: implement myMethod() here
-
-				}
-			};
+		        }
+		    };
 
 		})( jQuery, window, document );
 
 
 		// References
-		// http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/
+		/*
+		jQuery Pluginization and the accompanying gist (by Ben Alman) - http://goo.gl/1VwfP http://goo.gl/bg63
+		Essential jQuery Plugin Patterns (by Addy Osmani) - http://goo.gl/oE0ge
+		*/
 		</script>
 	</body>
 </html>

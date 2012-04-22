@@ -7,24 +7,17 @@
 	<body>
 		<script>
 			/* Title: context and find
-			 * Description: better to choose `find` over `context`
+			 * Description: better to choose `find` over `context` 
 			 */
 
-			// antipattern 1
+			
 			var arms = $('div.robotarm', '#container');
-
-
-			// preferred 1
-			var arms = $('#container').find('div.robotarm');
-
-
-			// antipattern 2
 			$('.reply_form', $(this).closest('.comment')).hide();
 
-
-			// preferred 2
+			// no performance gain over doing this, but a preferred pattern for readability reason
+			var arms = $('#container').find('div.robotarm');
 			$(this).closest('.comment').find('.reply_form').hide();
-
+			
 
 			// References
 			// http://paulirish.com/2009/perf/

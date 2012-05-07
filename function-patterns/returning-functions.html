@@ -20,10 +20,15 @@
 			var my = setup(); // alerts 1
 			my(); // alerts 2
 
-			var setup = function (count) {
+
+			 
+			// Your setup function can store some private data in a closure and use that data somehow.
+			// Here setup() creates a counter function, which gives a next ID for example. But the count variable is not exposed.
+			
+			var setup = function () {
 				var count = 0;
 				return function () {
-					return (count += 1);
+					return ++count;
 				};
 			};
 			// usage
@@ -33,8 +38,7 @@
 			//next(); // returns 3
 
 			// reference
-			// http://www.jspatterns.com/
-			// http://shop.oreilly.com/product/9780596806767.do?sortby=publicationDate
+			// http://www.jspatterns.com/returning-functions/
 		</script>
 	</body>
 </html>

@@ -17,8 +17,9 @@
 
 
 			// preferred
-			var photo = $('.photo');
+			var photo;
 			$('.list-item').click(function () {
+				photo = photo || $('.photo');
 				photo.hide();
 			});
 

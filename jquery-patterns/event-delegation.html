@@ -1,29 +1,35 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>JavaScript Patterns</title>
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<script>
-			/* Title: event delegation
-			 Description: event delegation pattern and antipattern
-			 */
+<head>
+<title>JavaScript 模式和反模式</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+	/* 题目: 事件委托
+	 * 描述: 事件委托模式和反模式
+	 */
 
-			// antipattern
-			$('a.trigger', $('#container')[0]).live('click', handlerFn);
-
-
-			// preferred
-			$('#container').on('click', 'a.trigger', handlerFn);
-
-			// .bind()
-			// .live() - best used for simple scenario, it functions the best with a supply selector only, it's not chainable
-			// .delegate() - it gives you a more focused way, it can better filter the elements, for example, table row
+	// 反模式
+	// .live() - 已经在最新的版本中废除了。它存在着以下的问题：
+  // 1. 不能用于重复使用的部件
+	// 2. topPropagate() 不能使用
+	// 3. 速度较慢
+	// 4. 不带有连锁性
+	$('a.trigger', $('#container')[0]).live('click', handlerFn);
 
 
-			// References
-			// http://paulirish.com/2009/perf/
-		</script>
-	</body>
+	// 模式
+	// .on() 的使用有以下好处：
+	// 1. 性能上有了优化
+	// 2. 不存在决了上述的问题
+	// 3. 统一了 .live(), .bind() 和 .delegate()
+	$('#container').on('click', 'a.trigger', handlerFn);
+
+	// .bind()
+	// .live() - best used for simple scenario, it functions the best with a supply selector only, it's not chainable
+	// .delegate() - it gives you a more focused way, it can better filter the elements, for example, table row
+
+</script>
+</body>
 </html>

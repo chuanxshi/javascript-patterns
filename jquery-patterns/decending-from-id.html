@@ -1,29 +1,26 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>JavaScript Patterns</title>
+		<title>JavaScript 模式和反模式</title>
 		<meta charset="utf-8">
 	</head>
 	<body>
 		<script>
-			/* Title: Decending from id
-			 * Description: be more specific, better to descend from an id
+			/* 题目: 从一个id下降
+			 * 描述: 更具体，最好从一个id下降
 			 */
 
-			// antipattern
+			// 反模式
 			var arms = $('.container div.robotarm');
 
 
-			// better
+			// 模式
 			var arms = $('#container div.robotarm');
 
 
-			// preferred
+			// 模式
 			var arms = $('#container').find('div.robotarm');
 
-
-			// References
-			// http://paulirish.com/2009/perf/
 		</script>
 	</body>
 </html>

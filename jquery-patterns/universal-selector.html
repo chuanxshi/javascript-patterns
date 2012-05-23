@@ -1,34 +1,31 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>JavaScript Patterns</title>
+		<title>JavaScript 模式和反模式</title>
 		<meta charset="utf-8">
 	</head>
 	<body>
 		<script>
-			/* Title: Universal Selector
-			 * Description: better use of universal selector
+			/* 题目: 通配选择器
+			 * 描述: 更好地利用通配选择器
 			 */
 
-			// antipattern 1
+			// 反模式 1
 			$('.buttons > *')
 
 
-			// preferred 1
+			// 模式 1
 			$('.buttons').children()
 
 
-			// antipattern 2
+			// 反模式 2
 			$('.gender :radio')
 			$('.gender *:radio')
 
 
-			// preferred 2
+			// 模式 2
 			$('.gender input:radio')
 
-
-			// References
-			// http://paulirish.com/2009/perf/
 		</script>
 	</body>
 </html>

@@ -1,31 +1,35 @@
 ﻿<!doctype html>
 <html lang="en">
-	<head>
-		<title>JavaScript Patterns</title>
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<script>
-			/* Title: selector cache
-			 Description: using selector cache to avoid requery
-			 */
+<head>
+<title>JavaScript 模式和反模式</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+	/* 题目: 选择器的缓存
+	 * 描述: 用选择器的缓存来避免重复查询
+	 */
 
-			// antipattern
-			$('.list-item').click(function () {
-				$('.photo').hide();
-			});
-
-
-			// preferred
-			var photo;
-			$('.list-item').click(function () {
-				photo = photo || $('.photo');
-				photo.hide();
-			});
+	// 反模式
+	$('.list-item').click(function () {
+		$('.photo').hide();
+	});
 
 
-			// References
-			// http://ejohn.org/blog/learning-from-twitter/
-		</script>
-	</body>
+	// 模式
+	var photo = $('.photo');
+	$('.list-item').click(function () {
+		photo.hide();
+	});
+
+	var photo;
+	$('.list-item').click(function() {
+		photo = photo || $('.photo');
+	})
+
+
+	// 参考
+	// http://ejohn.org/blog/learning-from-twitter/
+</script>
+</body>
 </html>

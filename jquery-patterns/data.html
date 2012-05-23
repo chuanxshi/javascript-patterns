@@ -1,25 +1,46 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>JavaScript Patterns</title>
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<script>
-			/* Title: data
-			 * Description: pattern and antipattern of using data
-			 */
+<head>
+<title>JavaScript 模式和反模式</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+	/* 题目: jquery.data
+	 * 描述: 使用data的模式和反模式
+	 */
 
-			// antipattern
-			$(elem).data(key, value);
+	// 在编程中，一般的框架有两种函数:
+	// 一种是低级 low-level function
+	// 一种是高级 high-level function
+	 
+	jQuery.extend({
+	 	data:function(){
+
+		}
+	});
+	$.xxx();
+
+	jQuery.fn.extend({
+	 	data:function(){
+
+	 	}
+	});
+	$().xxx();
+
+	//低级的一般用于内部的运算，性能高但是更接近机器语言，
+  //高级的一般是面向广大开发者的，更方便使用但是性能参差不齐。
+
+	// 反模式
+	$(elem).data(key, value);
 
 
-			// preferred
-			$.data(elem, key, value);
+	// 模式
+	$.data(elem, key, value);
 
 
-			// References
-			// http://paulirish.com/2009/perf/
-		</script>
-	</body>
+	// 参考
+	// http://paulirish.com/2009/perf/
+</script>
+</body>
 </html>

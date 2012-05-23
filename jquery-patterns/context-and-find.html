@@ -1,26 +1,27 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>JavaScript Patterns</title>
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<script>
-			/* Title: context and find
-			 * Description: better to choose `find` over `context` 
-			 */
+<head>
+<title>JavaScript 模式和反模式</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+	/* 题目: context 和 find
+	 * 描述: `find` 比 `context` 好些
+	 */
 
-			
-			var arms = $('div.robotarm', '#container');
-			$('.reply_form', $(this).closest('.comment')).hide();
+	var arms = $('div.robotarm', '#container');
+	$('.reply_form', $(this).closest('.comment')).hide();
 
-			// no performance gain over doing this, but a preferred pattern for readability reason
-			var arms = $('#container').find('div.robotarm');
-			$(this).closest('.comment').find('.reply_form').hide();
-			
 
-			// References
-			// http://paulirish.com/2009/perf/
-		</script>
-	</body>
+	// 跟前者比，在性能上没有明显的区别。
+	// 但是高级的明显在使用和阅读时，显得更方便。
+	var arms = $('#container').find('div.robotarm');
+	$(this).closest('.comment').find('.reply_form').hide();
+	
+
+	// 参考
+	// http://paulirish.com/2009/perf/
+</script>
+</body>
 </html>

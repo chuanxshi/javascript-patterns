@@ -1,25 +1,22 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>JavaScript Patterns</title>
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<script>
-			/* Title: detach
-			 * Description: take element off the DOM while manipulating them
-			 */
+<head>
+<title>JavaScript 模式和反模式</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+	/* 题目: detach
+	 * 描述: 用 `detach` 可以把DOM元素拿出来，再操纵
+	 */
 
-			var table = $('#some-table');
-			var parent = table.parent();
+	var table = $('#some-table');
+	var parent = table.parent();
 
-			table.detach();
-			table.addLotsAndLotsOfRows();
-			parent.append(table);
+	table.detach();
+	table.addLotsAndLotsOfRows();
+	parent.append(table);
 
-
-			// References
-			// http://paulirish.com/2009/perf/
-		</script>
-	</body>
+</script>
+</body>
 </html>

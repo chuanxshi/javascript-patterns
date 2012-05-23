@@ -1,42 +1,44 @@
 ﻿<!doctype html>
 <html lang="en">
-	<head>
-		<title>JavaScript Patterns</title>
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<script>
-			/* Title: append
-			 * Description: use string concatenate and set innerHTML
-			 */
+<head>
+<title>JavaScript 模式和反模式</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+	/* 题目: 附加
+	 * 描述: 使用字符串连接和innerHTML的设定
+	 */
 
-			// antipattern
-			// appending inside
-			$.each(reallyLongArray, function (count, item) {
-				var newLI = '<li>' + item + '</li>';
-				$('#ballers').append(newLI);
-			});
-
-
-			// documentFragment off-DOM
-			var frag = document.createDocumentFragment();
-			$.each(reallyLongArray, function (count, item) {
-				var newLI = $('<li>' + item + '</li>');
-				frag.appendChild(newLI[0]);
-			});
-			$('#ballers')[0].appendChild(frag);
+	// 反模式
+	// 循环过程中附加
+	$.each(reallyLongArray, function (count, item) {
+		var newLI = '<li>' + item + '</li>';
+		$('#ballers').append(newLI);
+	});
 
 
-			// string concatenate and set innerHTML
-			var myhtml = '';
-			$.each(reallyLongArray, function (count, item) {
-				myhtml += '<li>' + item + '</li>';
-			});
-			$('#ballers').html(myhtml);
+	// documentFragment off-DOM
+	// 用 documentFragment 可以起到 off-DOM 的作用， 在循环过程中，先附加在documentFragment 里，最后在一次放入DOM里：
+	var frag = document.createDocumentFragment();
+	$.each(reallyLongArray, function (count, item) {
+		var newLI = $('<li>' + item + '</li>');
+		frag.appendChild(newLI[0]);
+	});
+	$('#ballers')[0].appendChild(frag);
 
 
-			// References
-			// http://paulirish.com/2009/perf/
-		</script>
-	</body>
+	// 模式
+	// 循环过程中先使用字符串连接，之后再用innerHTML
+	var myhtml = '';
+	$.each(reallyLongArray, function (count, item) {
+		myhtml += '<li>' + item + '</li>';
+	});
+	$('#ballers').html(myhtml);
+
+
+	// 参考
+	// http://paulirish.com/2009/perf/
+</script>
+</body>
 </html>

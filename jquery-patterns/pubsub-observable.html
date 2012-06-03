@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script src="http://brado23.github.com/jquery-ui/jquery-1.6.2.js"></script>
+    <script src="http://brado23.github.com/jquery-ui/ui/jquery.ui.core.js"></script>
+    <script src="http://brado23.github.com/jquery-ui/ui/jquery.ui.widget.js"></script>
+    <script src="http://brado23.github.com/jquery-ui/ui/jquery.ui.button.js"></script>
+    <script src="http://brado23.github.com/jquery-ui/ui/jquery.ui.observable.js"></script>
+    <script src="http://brado23.github.com/jquery-ui/grid-editing/localstore.js"></script>
+		<script src="http://brado23.github.com/jquery-ui/grid-editing/observer.js"></script>​
+		<script>
+			/* Title: Using jQuery UI $.Observable
+			 * Description: Using jQuery UI $.Observable (which is currently still under development), when objects/collections of data are changed or updated, events are triggered to inform any observers of the change
+			 */
+
+			/*$.observers example by @addyosmani*/
+
+			var myData = [], 
+			    observer = $.observer(myData);
+
+			function dataChange( data ){
+			   console.log('New data arrived with ID ' + data[0].id + ' and value ' + data[0].title);   
+			}
+
+			$(observer).bind("change", function ( e ) { 
+			    dataChange( e.target.data );
+			});
+
+			$.observable( myData ).insert({
+			                id: myData.length + 1,
+			                title: 'test'
+			            });
+			
+			// References
+			// https://gist.github.com/1321768
+		</script>
+	</body>
+</html>

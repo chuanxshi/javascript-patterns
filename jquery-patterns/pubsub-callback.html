@@ -30,6 +30,14 @@
 			    return topic;
 			};
 
+			function fn1( value ){
+				console.log( value );
+			}
+
+			function fn2( value ){
+				fn1("fn2 says:" + value);
+				return false;
+			}
 
 			// Usage:
 			// Subscribers

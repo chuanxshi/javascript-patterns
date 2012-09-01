@@ -15,27 +15,35 @@
 				// stuff
 			};
 
+			// better 
 			if (!Array.prototype.map) {
 				Array.prototype.map = function() {
 					// stuff
 				};
 			}
 
+			// even better
 			if (typeof Array.prototype.map !== "function") {
 				Array.prototype.map = function() {
 					// stuff
 				}
 			}
 
-			// browsers seem to be a little frivolous with white spaces and new lines
+
+			// If use either native or your own implementation, but not others:
+			// When you call toString() of a native function it should return a string with a function that has a body of [native code] 
+
+			// by default there is white spaces and new lines issue
 			console.log(Array.prototype.map.toString().replace(/\s/g, '*'));
 			// "*function*map()*{*****[native*code]*}*"  // IE
 			// "function*map()*{*****[native*code]*}" // FF
 			// "function*map()*{*[native*code]*}" // Chrome
 
+			// a proper check can fix the problem
 			console.log(Array.prototype.map.toString().replace(/\s/g, ''));
 			// "functionmap(){[nativecode]}"
 
+			// a reusable shim() function
 			function shim(o, prop, fn) {
 				var nbody = "function" + prop + "(){nativecode]}";
 				if (o.hasOwnProperty(prop) &&
@@ -62,7 +70,7 @@
 			[1,2,3].mapzer(); // alerts 1,2,3
 
 			// References
-			// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
+			// http://www.jspatterns.com/shim-sniffing/
 		</script>
 	</body>
 </html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			/* Title: Shim Sniffing
+			 * Description: 
+			 */
+
+			// antipattern
+			Array.prototype.map = function() {
+				// stuff
+			};
+
+			if (!Array.prototype.map) {
+				Array.prototype.map = function() {
+					// stuff
+				};
+			}
+
+			if (typeof Array.prototype.map !== "function") {
+				Array.prototype.map = function() {
+					// stuff
+				}
+			}
+
+			// browsers seem to be a little frivolous with white spaces and new lines
+			console.log(Array.prototype.map.toString().replace(/\s/g, '*'));
+			// "*function*map()*{*****[native*code]*}*"  // IE
+			// "function*map()*{*****[native*code]*}" // FF
+			// "function*map()*{*[native*code]*}" // Chrome
+
+			console.log(Array.prototype.map.toString().replace(/\s/g, ''));
+			// "functionmap(){[nativecode]}"
+
+			function shim(o, prop, fn) {
+				var nbody = "function" + prop + "(){nativecode]}";
+				if (o.hasOwnProperty(prop) &&
+					o[prop].toString().replace(/\s/g, '') === nbody) {
+					// native!
+					return true;
+				}
+				// shim
+				o[prop] = fn;
+			}
+
+			// this is native, cool
+			shim(
+				Array.prototype, 'map',
+				function(){/*...*/}
+			); // true
+
+			// this is new
+			shim(
+				Array.prototype, 'mapzer',
+				function(){console.log(this)}
+			);
+
+			[1,2,3].mapzer(); // alerts 1,2,3
+
+			// References
+			// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
+		</script>
+	</body>
+</html>

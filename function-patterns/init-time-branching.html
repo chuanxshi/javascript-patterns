@@ -36,6 +36,9 @@
 				utils.addListener = function (el, type, fn) {
 					el.addEventListener(type, fn, false);
 				};
+				utils.removeListener = function(el, type, fn) { 
+					el.removeEventListener(type, fn, false); 
+				};
 			} else if (typeof document.attachEvent !== 'undefined') { // IE
 				utils.addListener = function (el, type, fn) {
 					el.attachEvent('on' + type, fn);

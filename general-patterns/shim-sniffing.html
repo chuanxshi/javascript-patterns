@@ -45,7 +45,7 @@
 
 			// a reusable shim() function
 			function shim(o, prop, fn) {
-				var nbody = "function" + prop + "(){nativecode]}";
+				var nbody = "function" + prop + "(){[nativecode]}";
 				if (o.hasOwnProperty(prop) &&
 					o[prop].toString().replace(/\s/g, '') === nbody) {
 					// native!

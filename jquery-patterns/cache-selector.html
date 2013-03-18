@@ -17,10 +17,11 @@
 
 
 			// preferred
-			var photo;
+			var $photo;
+			// prefix the cache with $ to help identify it as a selector cache later
 			$('.list-item').click(function () {
-				photo = photo || $('.photo');
-				photo.hide();
+				$photo = $photo || $('.photo');
+				$photo.hide();
 			});
 
 

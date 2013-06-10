@@ -34,7 +34,7 @@
 			 * result in the console
 			 * hands : 2
 			 * legs : 2
-			 * hands : 1
+			 * heads : 1
 			 * clone: function()
 			 */
 
@@ -55,7 +55,7 @@
 
 
 			// preferred 2
-			// benefit is you can avoid naming collisions is case the `man` object has redefined `hasOwnProperty`
+			// benefit is you can avoid naming collisions in case the `man` object has redefined `hasOwnProperty`
 			for (var i in man) {
 				if (Object.prototype.hasOwnProperty.call(man, i)) { // filter
 					console.log(i, ":", man[i]);

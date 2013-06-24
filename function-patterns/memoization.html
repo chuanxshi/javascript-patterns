@@ -43,6 +43,11 @@
 
 			// preferred method 2
 			// multiple arguments using JSON stringify
+			
+			// this will only work correctly for primitive (and Array) arguments, 
+			// since the order in which properties of Objects are enumerated is undetermined 
+			// and can even change between enumerations. 
+			// (a JSON encoder that sorts the keys won't have this issue).
 
 			var myFunc = function () {
 				var cachekey = JSON.stringify(Array.prototype.slice.call(arguments)),

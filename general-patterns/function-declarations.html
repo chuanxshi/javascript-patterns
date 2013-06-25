@@ -27,24 +27,11 @@
 
 			// named function expression
 			/* Benefits:
-			 * 1. Provides the debugger with an explicit function name: helps stack inspection.
-			 * 2. Allows recursive functions: getData can call itself.
-			 * Issues:
-			 * 1. Can break IE, coffeescript doesn't do function names:
-			 *    https://github.com/jashkenas/coffee-script/issues/366
+			 * 1. Get's rid of (anonymous functions) when inspecting and debugging
+			 * 2. Doesn't break IE with the added 'Fn' (function name is not the same as the identifier)
 			 */
-			var getData = function getData () {
+			var getData = function getDataFn () {
 			};
-
-                        // named function expression + 'F'
-			/* Benefits:
-			 * 1. Get's rid of (anonymous funciton) in stack traces
-			 * 2. Recurse by calling the name + 'F'
-			 * 3. Doesn't break an IE (well, unless there's a function name collision of the sort described here: https://github.com/jashkenas/coffee-script/issues/366#issuecomment-242134)
-			 */
-			var getData = function getDataF () {
-			};
-
 
 			// References
 			// http://ejohn.org/blog/javascript-as-a-first-language/

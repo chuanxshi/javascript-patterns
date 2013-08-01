@@ -28,7 +28,8 @@
 			var two = {
 				name:'another object'
 			};
-
+			
+			// apply two to original object one.
 			console.log(one.say.apply(two, ['hello'])); // "hello, another object"
 
 			// assigning to a variable
@@ -43,7 +44,7 @@
 					return callback('Hola');
 				}
 			};
-			console.log(yetanother.method(one.say)); // "Holla, undefined"
+			console.log(yetanother.method(one.say)); // "Hola, undefined"
 
 			function bind(o, m) {
 				return function () {

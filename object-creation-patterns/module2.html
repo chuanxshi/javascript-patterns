@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>JavaScript Patterns</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			/* Title: Module Pattern
+			 Description: all the methods are kept private and you only expose those that you decide at the end
+			 */
+			
+			// create a namespace
+			YAHOO.namespace("myProject");
+
+
+
+			YAHOO.myProject.myModule = function () {
+
+				//"private" variables:
+				var myPrivateVar = "I can be accessed only from within YAHOO.myProject.myModule.";
+				
+				//"private" method:
+				var myPrivateMethod = function () {
+					YAHOO.log("I can be accessed only from within YAHOO.myProject.myModule");
+				}
+
+				//return public methods
+				return  {
+					myPublicProperty: "I'm accessible as YAHOO.myProject.myModule.myPublicProperty.",
+					myPublicMethod: function () {
+						YAHOO.log("I'm accessible as YAHOO.myProject.myModule.myPublicMethod.");
+
+						//Within myProject, I can access "private" vars and methods:
+						YAHOO.log(myPrivateVar);
+						YAHOO.log(myPrivateMethod());
+
+						//The native scope of myPublicMethod is myProject; we can
+						//access public members using "this":
+						YAHOO.log(this.myPublicProperty);
+					}
+				};
+
+			}(); // the parens here cause the anonymous function to execute and return
+
+			
+			// Reference
+			// http://yuiblog.com/blog/2007/06/12/module-pattern/
+			
+		</script>
+</html>

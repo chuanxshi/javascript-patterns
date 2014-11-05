@@ -1,21 +1,21 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>JavaScript Patterns</title>
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<script>
-			/* Title: Single var Pattern
-			 Description: use one var statement and declare multiple variables
-			 */
+  <head>
+    <title>JavaScript Patterns</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      /* Title: Single var Pattern
+       Description: use one var statement and declare multiple variables
+       */
 
-			/* Benefits:
-			 * 1. Provides a single place to look for all the local variables needed by the function
-			 * 2. Prevents logical errors when a variable is used before it's defined
-			 * 3. Helps you remember to declare variables and therefore minimize globals
-			 * 4. Is less code (to type and to transfer over the wire)
-			 */
+      /* Benefits:
+       * 1. Provides a single place to look for all the local variables needed by the function
+       * 2. Prevents logical errors when a variable is used before it's defined
+       * 3. Helps you remember to declare variables and therefore minimize globals
+       * 4. Is less code (to type and to transfer over the wire)
+       */
 
       function func() {
         var a = 1
@@ -28,28 +28,28 @@
         // function body...
       }
 
-			function updateElement() {
+      function updateElement() {
         var el = document.getElementById("result")
           , style = el.style;
-				// do something with el and style...
-			}
-			
-			// Preferred way 
-			// Move commas BEFORE vars
-			// You'll not forget to add one when adding variable to the end of list
-			function func() {
-				var a = 1
-						, b = 2
-						, sum = a + b
-						, myobject = {}
-						, i
-						, j;
+        // do something with el and style...
+      }
+      
+      // Preferred way 
+      // Move commas BEFORE vars
+      // You'll not forget to add one when adding variable to the end of list
+      function func() {
+        var a = 1
+            , b = 2
+            , sum = a + b
+            , myobject = {}
+            , i
+            , j;
 
-				// function body...
-			}
+        // function body...
+      }
 
-			// References
-			// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
-		</script>
-	</body>
+      // References
+      // http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
+    </script>
+  </body>
 </html>

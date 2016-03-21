@@ -4,3 +4,5 @@
 <br />
 Project page at: <a href="http://shichuan.github.com/javascript-patterns" target="_blank">http://shichuan.github.com/javascript-patterns</a>
 
+#TODO:
+- [ ] Create new github page for this repository

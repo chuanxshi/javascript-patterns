@@ -10,13 +10,13 @@
 			 Description: objects inherit from other objects
 			 */
 
-			function object(o) {
-				function F() {
-				}
+			var object = function object(o) {
+				var F = function F() {
+				};
 
 				F.prototype = o;
 				return new F();
-			}
+			};
 
 			// object to inherit from
 			var parent = {
@@ -31,10 +31,10 @@
 
 
 			// parent constructor
-			function Person() {
+			var Person = function Person() {
 				// an "own" property
 				this.name = "Adam";
-			}
+			};
 			// a property added to the prototype
 			Person.prototype.getName = function () {
 				return this.name;
@@ -49,10 +49,10 @@
 
 
 			// parent constructor
-			function Person() {
+			var Person = function Person() {
 				// an "own" property
 				this.name = "Adam";
-			}
+			};
 			// a property added to the prototype
 			Person.prototype.getName = function () {
 				return this.name;

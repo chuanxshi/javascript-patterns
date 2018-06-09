@@ -27,7 +27,15 @@
 			 */
 			+"08" // result is 8
 			Number("08") // 8
-
+			
+			//pattern 3
+			/* NOTE: Bit operator parsing to int and chunk float vars, if a string has characters it return zero (0)
+			 *
+			 */
+			("789"|0) // => 789
+			("sds"|0) // => 0
+			(8.45|0) // => 8
+			("8.55"|0) // => 8
 
 			// References
 			// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/

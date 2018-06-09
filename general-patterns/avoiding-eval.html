@@ -11,12 +11,13 @@
 			 */
 
 			// antipattern 1
-			var property = "name";
+			var property = "name",
+			    obj = { name: "John" };
+
 			alert(eval("obj." + property));
 
 
 			// preferred 1
-			var property = "name";
 			alert(obj[property]);
 
 

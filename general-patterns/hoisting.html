@@ -11,21 +11,26 @@
 			 */
 
 			// antipattern
-			myname = "global"; // global variable
-			function func() {
-				alert(myname); // "undefined"
-				var myname = "local";
-				alert(myname); // "local"
+			wontchange = "global"; // global variable
+			willchange = "global"; // global variable
+			function func_bad() {
+				alert(wontchange); // "global"
+				alert(willchange); // "undefined" due to the var below
+				var willchange = "local"; // This rescopes willchange inside this function
+				alert(willchange); // "local"
 			}
-			func();
+			func_bad();
 
 			// the preceding code snippet will behave as if it were implemented like so:
-			myname = "global"; // global variable
+			wontchange = "global"; // global variable
+			willchange = "global"; // global variable
 			function func() {
-				var myname; // same as -> var myname = undefined;
-				alert(myname); // "undefined"
-				myname = "local";
-				alert(myname); // "local"
+				// This still rescopes, but it is a lot more explicit
+				var willchange; // same as -> var willchange = undefined;
+				alert(wontchange); // "global"
+				alert(willchange); // "undefined"
+				willchange = "local";
+				alert(willchange); // "local"
 			}
 			func();
 

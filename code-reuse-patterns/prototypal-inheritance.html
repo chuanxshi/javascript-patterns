@@ -39,29 +39,32 @@
 			Person.prototype.getName = function () {
 				return this.name;
 			};
+
 			// create a new person
 			var papa = new Person();
+
 			// inherit
 			var kid = object(papa);
+
 			// test that both the own property
 			// and the prototype property were inherited
 			console.log(kid.getName()); // "Adam"
-
 
 			// parent constructor
 			function Person() {
 				// an "own" property
 				this.name = "Adam";
 			}
+
 			// a property added to the prototype
 			Person.prototype.getName = function () {
 				return this.name;
 			};
+
 			// inherit
 			var kid = object(Person.prototype);
 			console.log(typeof kid.getName); // "function", because it was in the prototype
 			console.log(typeof kid.name); // "undefined", because only the prototype was inherited
-
 
 			/* Addition to ECMAScript 5 */
 			var child = Object.create(parent);

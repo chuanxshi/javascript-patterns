@@ -10,8 +10,9 @@
 			 Description: event delegation pattern and antipattern
 			 */
 
-			// antipattern
-			$('a.trigger', $('#container')[0]).live('click', handlerFn);
+			// antipattern 
+			// As of jQuery 1.7, the .live() method is deprecated
+			// $('a.trigger', $('#container')[0]).live('click', handlerFn);
 
 
 			// preferred

@@ -13,7 +13,7 @@
 			function Gadget() {
 				// private member
 				var name = 'iPod';
-				// public function
+				// privileged function
 				this.getName = function () {
 					return name;
 				};
@@ -26,20 +26,23 @@
 			// public method has access to `name`
 			console.log(toy.getName()); // "iPod"
 
-			var myobj; // this will be the object
-			(function () {
+			// this will be the object
+			var bob = (function () {
 				// private members
-				var name = "my, oh my";
+				var name = "Bob";
 
-				// implement the public part
-				// note -- no `var`
-				myobj = {
-					// priviledged method
+				// implement the public interface
+				var person = {
+					// public method
 					getName:function () {
 						return name;
 					}
 				};
-			}());
+				
+				return person;
+			})();
+			
+			console.log(bob.getName()); // "Bob"
 		</script>
 	</body>
 </html>

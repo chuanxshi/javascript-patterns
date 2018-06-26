@@ -1,0 +1,233 @@
+﻿<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>JavaScript的模式和反模式集合</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+  <link href='http://fonts.googleapis.com/css?family=Tinos:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build incl. Respond.js
+       Respond is a polyfill for min/max-width media queries. Modernizr enables HTML5 elements & feature detects; 
+       for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="../js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+  <a class="fork" href="https://github.com/shichuan/javascript-patterns">
+    <img src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+   </a>
+  <header>
+    <div class="clearfix">
+      <h1>JavaScript的模式集合</h1>
+      <div id="btns">
+      <span  class='st_sina_hcount' displayText='Sina'></span><span  class='st_baidu_hcount' displayText='Baidu'></span><span  class='st_twitter_hcount' displayText='Tweet'></span><span  class='st_facebook_hcount' displayText='Facebook'></span><span  class='st_fblike_hcount' ></span><span  class='st_plusone_hcount' ></span>
+      </div>
+    </div>
+    <img src="../img/js-patterns-cn.png" alt="JS Patterns" title="JS Patterns" />
+  </header>
+  <div role="main">
+    <section id="intro">
+      <p>A JavaScript pattern and antipattern code collection that covers function patterns, jQuery patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns (<em>upcoming</em>), code reuse patterns (<em>upcoming</em>), DOM and browser patterns (<em>upcoming</em>).</p>
+      <p>Weekly roundups (pattern updates) will be regularly <a href="http://twitter.com/shichuan">tweeted</a>.</p>
+    </section>
+    <section>
+      <h2>Function Patterns</h2>
+      <h3>API Patterns</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/function-patterns/callback.html" target="_blank">Callback patterns</a> - when you pass function A to function B as a parameter, function A is a callback function</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/function-patterns/configuration-objects.html" target="_blank">Configuration objects </a>- keep control of function arguments and makes it easily configurable</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/function-patterns/returning-functions.html" target="_blank">Returning functions </a>- one function returns another function or create another function on-demand</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/function-patterns/currying.html" target="_blank">Currying</a> - used to create new functions dynamically by partially applying a set of arguments</li>
+      </ul>
+      
+      <h3>Initialization patterns</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/function-patterns/immediate-functions.html" target="_blank">Immediate functions</a> - syntax that enables function execution as soon as it is defined</li> 
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/function-patterns/immediate-object-initialization.html" target="_blank">Immediate object initialization</a> - this pattern is mainly suitable for one-off tasks</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/function-patterns/init-time-branching.html" target="_blank">Init-time branching</a> - branch code once during initlization initialization</li>
+      </ul>
+      
+      <h3>Performance patterns</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/function-patterns/memoization.html">Memoization</a> - use function properties to avoid repeated computation</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/function-patterns/self-defining-functions.html">Self-defining functions</a> - self-overwrite with new bodies to do less work from the second invocation and after</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>jQuery Patterns</h2>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/requery.html" target="_blank">requery</a> - avoid requery by using jQuery chaining</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/append.html" target="_blank">append</a> - use string concatenate and set innerHTML</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/data.html" target="_blank">data</a> - pattern and antipattern of using data</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/context-and-find.html" target="_blank">context and find</a> - use find over context</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/detach.html" target="_blank">detach</a> - take element off the DOM while manipulating them</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/event-delegation.html" target="_blank">event delegation</a> - event delegation pattern and antipattern</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/cache-selector.html" target="_blank">selector cache</a> - using selector cache to avoid requery</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/window-scroll-event.html" target="_blank">window scroll event</a> -  avoid attaching handlers to the window scroll event</li>
+      </ul>
+      <h3>Selector</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/left-and-right.html" target="_blank">Left and Right</a> - specific on the right, light on the left</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/decending-from-id.html" target="_blank">Decending from id</a> - be more specific</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/universal-selector.html" target="_blank">Universal Selector</a> - use of universal selector</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/jquery-patterns/specific-when-needed.html" target="_blank">Be Specific when Needed</a> - be specific only when needed</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>Literals and Constructors Patterns</h2>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/literals-and-constructors/object-literal.html" target="_blank">Object literal</a> - use the simpler and reliable object literal instead of new Object();</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/literals-and-constructors/enforcing-new.html" target="_blank">Enforcing new</a> - when you forget `new`, `this` inside the constructor will point to the global object</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/literals-and-constructors/array-literal.html" target="_blank">Array literal</a> - use array literal notation to avoid potential errors when creating dynamic arrays at runtime</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/literals-and-constructors/json.html" target="_blank">Working with JSON</a> - use library from JSON.org, YUI, jQuery instead of eval for parsing</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/literals-and-constructors/primitive-wrappers.html" target="_blank">Primitive wrappers</a> - try to use the primitive without wrapper</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/literals-and-constructors/regular-expression-literal.html" target="_blank">Regular expression literal</a> - try to use the shorter literal notation</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>Design Patterns</h2>
+      <h3>Creational</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/builder.html" target="_blank">Builder</a> - constructs complex objects by separating construction and representation</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/factory.html" target="_blank">Factory method</a> - creates objects without specifying the exact class to create</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/singleton.html" target="_blank">Singleton</a> - restricts object creation for a class to only one instance</li>
+      </ul>
+      <h3>Structural</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/decorator.html" target="_blank">Decorator</a> - dynamically adds/overrides behaviour in an existing method of an object</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/facade.html" target="_blank">Facade</a> - provides a simplified interface to a large body of code</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/proxy.html" target="_blank">Proxy</a> - provides a placeholder for another object to control access, reduce cost, and reduce complexity</li>
+      </ul>
+      <h3>Behavioral</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/chain-of-responsibility.html" target="_blank">Chain of responsibility</a> - delegates commands to a chain of processing objects</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/command.html" target="_blank">Command</a> - creates objects which encapsulate actions and parameters</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/iterator.html" target="_blank">Iterator</a> - implements a specialized language</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/mediator.html" target="_blank">Mediator</a> - allows loose coupling between classes by being the only class that has detailed knowledge of their methods</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/observer.html" target="_blank">Observer</a> - is a publish/subscribe pattern which allows a number of observer objects to see an event</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/strategy.html" target="_blank">Strategy</a> - allows one of a family of algorithms to be selected on-the-fly at runtime</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>General Patterns</h2>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/minimizing-globals.html" target="_blank">Minimizing Globals</a> - create and access a global variable in a browser environment</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/globals.html" target="_blank">The Problem with Globals</a> - various problems with globals</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/access-to-global-object.html" target="_blank">Access to the Global Object</a> - access the global object without hard-coding the identifier window</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/single-var-pattern.html" target="_blank">Single var Pattern</a> - use one var statement and declare multiple variables</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/hoisting.html" target="_blank">Hoisting</a> - var statements anywhere in a function act as if the variables were declared at the top of the function</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/for-loops.html" target="_blank">for loops</a> - optimized for loops</li> 
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/for-in-loops.html" target="_blank">for-in loops</a> - optimized for-in loops</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/built-in-prototypes.html" target="_blank">(Not) Augmenting Built-in Prototypes</a> - only augment built-in prototypes when certain conditions are met</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/switch-pattern.html" target="_blank">switch Pattern</a> - improve the readability and robustness of your switch statements</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/avoiding-implied-typecasting.html" target="_blank">Implied Typecasting</a> - avoid implied typecasting</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/avoiding-eval.html" target="_blank">Avoiding eval()</a> - avoid using eval()</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/parseint.html" target="_blank">Number Conversions with parseInt()</a> - use the second radix parameter</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/general-patterns/conditionals.html" target="_blank">Conditionals</a> - pattern and antipattern of using if else</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2><em>References</em></h2>
+      <ol>    
+        <li>
+        The Essentials of Writing High Quality JavaScript<br />
+        <a href="http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/" target="_blank">http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/</a>
+        </li>
+        <li>
+        JSPatterns<br />
+        <a href="http://www.jspatterns.com/" target="_blank">http://www.jspatterns.com/</a>
+        </li>
+        <li>
+        jQuery Anti-Patterns for Performance & Compression<br />
+        <a href="http://paulirish.com/2009/perf/" target="_blank">http://paulirish.com/2009/perf/</a>
+        </li>
+        <li>
+        How DRY Affects JavaScript Performance<br />
+        <a href="http://velocityconf.com/velocityeu/public/schedule/detail/21634" target="_blank">http://velocityconf.com/velocityeu/public/schedule/detail/21634</a>
+        </li>
+        <li>
+        Object Oriented JavaScript<br />
+        <a href="http://www.packtpub.com/object-oriented-javascript/book" target="_blank">http://www.packtpub.com/object-oriented-javascript/book</a>
+        </li>
+        <li>
+        JavaScript Patterns<br />
+        <a href="http://shop.oreilly.com/product/9780596806767.do" target="_blank">http://shop.oreilly.com/product/9780596806767.do</a>
+        </li>
+        <li>
+        JavaScript: The Good Parts<br />
+        <a href="http://shop.oreilly.com/product/9780596517748.do" target="_blank">http://shop.oreilly.com/product/9780596517748.do</a>
+        </li>
+        <li>
+        Pro JavaScript Design Patterns<br />
+        <a href="http://jsdesignpatterns.com/" target="_blank">http://jsdesignpatterns.com/</a>
+        </li>
+        <li>
+        Essential JavaScript Design Patterns For Beginners, Volume 1.<br />
+        <a href="http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank">http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/</a>
+        </li>
+        <li>
+        Eloquent JavaScript<br />
+        <a href="http://eloquentjavascript.net/" target="_blank">http://eloquentjavascript.net/</a>
+        </li>
+      </ol>
+    </section>
+  </div>
+  <footer>
+    by <a href="http://twitter.com/#!/shichuan">@shichuan</a>
+  </footer>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../js/libs/jquery-1.6.4.min.js"><\/script>')</script>
+
+
+  <!-- scripts concatenated and minified via build script -->
+  <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'44fc3536-fd12-4c07-970d-6654da9a2d6c'});</script>
+  <!-- end scripts -->
+
+
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-2773745-18'],['_trackPageview'],['_trackPageLoadTime']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+
+</body>
+</html>

@@ -111,14 +111,12 @@
 			// linked to the objects
 			uni.nothing; // true
 			uni2.nothing; // true
-			uni.everything; // undefined
-			uni2.everything; // undefined
+			uni.everything; // true
+			uni2.everything; // true
 
 			// that sounds right:
 			uni.constructor.name; // "Universe"
-
-			// but that's odd:
-			uni.constructor === Universe; // false
+			uni.constructor === Universe; // true
 
 			var Universe;
 

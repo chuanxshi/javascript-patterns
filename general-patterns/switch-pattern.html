@@ -21,6 +21,7 @@
 			 *    the cases matched.
 			 */
 
+			//antipattern
 			var inspect_me = 0,
 					result = '';
 			switch (inspect_me) {
@@ -33,6 +34,33 @@
 			default:
 				result = "unknown";
 			}
+
+			//preferred 1,
+			//'cause it is much faster and easy to reuse and read
+			//avoid to use switch
+			var results = {
+				0: "zero",
+				1: "one"
+			};
+
+			result = results[inspect_me] || "unknown";
+
+			//preferred 2
+			var resultFuncs = {
+				0: function () {
+					//some code for "zero" case
+					return "zero";
+				},
+				1: function () {
+					//some code for one case
+					return "one";
+				}
+			};
+
+			result = (resultFuncs[inspect_me] || function () {
+				//some code for default case
+				return "unknown";
+			})();
 
 			// References
 			// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/

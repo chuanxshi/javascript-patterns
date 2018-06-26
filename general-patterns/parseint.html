@@ -14,9 +14,10 @@
 			/* NOTE: in this example, if you omit the radix parameter like parseInt(year), the returned value will be 0,
 			 * because "09" assumes octal number (as if you did parseInt( year, 8 )) and 09 is not a valid digit in base 8.
 			 */
+			 //if we omit the radix parameter then the returned value is not zero, it takes base 10 in chrome console.please check
 
 			var month = "06",
-					year = "09";
+			year = "09";
 			month = parseInt(month, 10);
 			year = parseInt(year, 10);
 
@@ -24,12 +25,24 @@
 			// pattern 2
 			/* NOTE: if you're expecting input such as “08 hello”, parseInt() will return a number, whereas the others will fail
 			 * with NaN.
+			 If the input string begins with "0", radix is eight (octal) or 10 (decimal).  
+			 Exactly which radix is chosen is *implementation-dependent*.  
+			 ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.
 			 */
 			+"08" // result is 8
 			Number("08") // 8
-
+			
+			//pattern 3
+			/* NOTE: Bit operator parsing to int and chunk float vars, if a string has characters it return zero (0)
+			 *
+			 */
+			("789"|0) // => 789
+			("sds"|0) // => 0
+			(8.45|0) // => 8
+			("8.55"|0) // => 8
 
 			// References
+			// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
 			// http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/
 		</script>
 	</body>

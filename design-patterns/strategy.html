@@ -76,7 +76,7 @@
 			// checks if a value is a number
 			validator.types.isNumber = {
 				validate:function (value) {
-					return !isNaN(value);
+					return !isNaN(value) && value/Infinity === 0;
 				},
 				instructions:"the value can only be a valid number, e.g. 1, 3.14 or 2010"
 			};

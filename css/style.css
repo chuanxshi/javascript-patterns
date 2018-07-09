@@ -239,7 +239,7 @@ header img {padding-top:5px; border-top:1px solid #ccc; display:block;}
 h1, h2, h3 {font-family: 'Tinos', serif; padding:0; margin:0;}
 
 h1 {
-  font-size: 1.6em;
+  font-size: 2em;
   float:left; 
   margin-top:7px;
 }
@@ -285,34 +285,35 @@ img {
 
 nav {
   text-align: left;
-  background: #324A69;
-  background: -o-linear-gradient(rgba(50, 74, 105, 0.8), rgba(50, 74, 105, 1));
-  background: -webkit-linear-gradient(rgba(50, 74, 105, 0.8), rgba(50, 74, 105, 1));
-  background: -moz-linear-gradient(rgba(50, 74, 105, 0.8), rgba(50, 74, 105, 1));
-  background: -ms-linear-gradient(rgba(50, 74, 105, 0.8), rgba(50, 74, 105, 1));
-  margin: 1em 0;
+  background: #e0b36c;
+  background: -o-linear-gradient(rgba(224, 179, 108, 0.8), rgba(224, 179, 108, 1));
+  background: -webkit-linear-gradient(rgba(224, 179, 108, 0.8), rgba(224, 179, 108, 1));
+  background: -moz-linear-gradient(rgba(224, 179, 108, 0.8), rgba(152, 175, 205, 1));
+  background: -ms-linear-gradient(rgba(224, 179, 108, 0.8), rgba(224, 179, 108, 1));
+  margin: 1em 1em 1em 1em;
 }
 
 nav li {
-  color: #fff;
+  color: #000;
   list-style-position: inside;
-  list-style-type: disc;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+  list-style-type: none;
+  border-bottom: solid 1px rgba(255, 0, 0, 0.2);
   margin: 0;
 }
 
 nav li a:visited,
 nav li a {
-  color: #fff;
+  color: #000;
 }
 nav li a {
   font-size: 0.9em;
   display: block;
-  padding: 0.5em 0.3em;
+  padding: 1.6em 1.6em;
+  text-align: center;
 }
 
 nav li a:hover {
-  color: #ccc;
+  color: #f00;
 }
 
 nav #toggle-nav {

@@ -1,4 +1,4 @@
-#JavaScript Patterns
+#Welcome to JavaScript Patterns
 
 <img src="http://shichuan.github.io/javascript-patterns/img/js-patterns.png" alt="JS Patterns" title="JS Patterns" />
 <br />

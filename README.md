@@ -4,3 +4,4 @@
 <br />
 Project page at: <a href="http://shichuan.github.io/javascript-patterns" target="_blank">http://shichuan.github.io/javascript-patterns</a>
 
+Thank you
